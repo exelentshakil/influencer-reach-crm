@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Production Implementation Estimate - Bearvana Influencer CRM</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 20mm;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.5;
+      font-size: 13px;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid #bfdbfe;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 22px;
+      margin: 0 0 6px 0;
+      color: #0f172a;
+      font-weight: 800;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 12px;
+      font-size: 11px;
+    }
+    .meta-item strong {
+      color: #475569;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 11px;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      color: #334155;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+    .total-row {
+      background: #f8fafc;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    h2 {
+      font-size: 14px;
+      border-left: 3px solid #2563eb;
+      padding-left: 8px;
+      margin: 20px 0 10px 0;
+      color: #1e293b;
+    }
+    ul {
+      margin: 6px 0;
+      padding-left: 18px;
+      font-size: 11px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    .footer {
+      margin-top: 30px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 12px;
+      font-size: 10px;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="badge">Production Scope & Architecture</div>
+    <h1>Platform-Compliant Influencer Outreach & CRM</h1>
+    <div class="meta-grid">
+      <div class="meta-item"><strong>Client:</strong> Zeid • Bearvana (Hoboken, NJ)</div>
+      <div class="meta-item"><strong>Engineering Partner:</strong> Md Shakil A. • BarakahSoft LLC</div>
+      <div class="meta-item"><strong>Calibrated Rate:</strong> $34.00 / hour (Target Velocity)</div>
+      <div class="meta-item"><strong>Timeline:</strong> 10 Working Days (36 hrs/week)</div>
+      <div class="meta-item"><strong>Prototype Deliverable:</strong> Interactive Web Demo ($0 Phase 0)</div>
+      <div class="meta-item"><strong>Live URL:</strong> https://influencer-reach-crm.vercel.app</div>
+    </div>
+  </div>
+
+  <h2>1. Scope of Work & Milestone Breakdown</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 15%;">Phase</th>
+        <th style="width: 50%;">Milestone Deliverable</th>
+        <th style="width: 10%;">Hours</th>
+        <th style="width: 12%;">Rate</th>
+        <th style="width: 13%;">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background: #f0fdf4;">
+        <td><strong>Phase 0</strong></td>
+        <td><strong>Working Prototype & Compliance Matrix</strong><br>Interactive Next.js 15 UI, Bearvana profile context, simulated Graph/TikTok APIs, /api/compliance audit.</td>
+        <td>18 hrs</td>
+        <td>$0.00</td>
+        <td><strong>$0.00 (Live)</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Phase 1</strong></td>
+        <td><strong>Official Meta & TikTok API Authentication</strong><br>Meta Graph API v20.0 Business Discovery, TikTok Creator API, multi-brand Supabase token vault, rate limit handlers.</td>
+        <td>18 hrs</td>
+        <td>$34.00</td>
+        <td>$612.00</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 2</strong></td>
+        <td><strong>Grounded AI Personalization Engine</strong><br>Public media auditing, context extraction from real reels/videos, Claude/OpenAI prompt pipelines, tone selectors.</td>
+        <td>14 hrs</td>
+        <td>$34.00</td>
+        <td>$476.00</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 3</strong></td>
+        <td><strong>Human-in-the-Loop Gate & SLA Engine</strong><br>1-click approval workflow, role-based assignments (Zeid, Queen Y.), 48h SLA reminders, Inngest queues.</td>
+        <td>16 hrs</td>
+        <td>$34.00</td>
+        <td>$544.00</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 4</strong></td>
+        <td><strong>CRM Pipeline, Webhooks & Reporting</strong><br>Instagram Direct webhook sync, stage transitions, product dispatch tracking, CSV export & response analytics.</td>
+        <td>15 hrs</td>
+        <td>$34.00</td>
+        <td>$510.00</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 5</strong></td>
+        <td><strong>Security Audit & Production Deployment</strong><br>Zero-bot policy validation, Vercel Fluid Compute deployment, team onboarding, 14 days live support.</td>
+        <td>9 hrs</td>
+        <td>$34.00</td>
+        <td>$306.00</td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="2">TOTAL TURNKEY PRODUCTION SYSTEM</td>
+        <td>72 hrs</td>
+        <td>$34.00</td>
+        <td>$2,448.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Fixed-Price Milestone Option</h2>
+  <ul>
+    <li><strong>Milestone 1 (Days 1–4): $950.00</strong> — Live Social API Connections, Multi-Brand Vault & Creator Discovery.</li>
+    <li><strong>Milestone 2 (Days 5–8): $950.00</strong> — Grounded AI Composer, Human Gate & Team Member SLA Reminders.</li>
+    <li><strong>Milestone 3 (Days 9–10): $548.00</strong> — Conversation Tracking, Webhooks, Analytics Export & Final Launch.</li>
+  </ul>
+
+  <h2>3. Why This Protects Bearvana's Social Accounts</h2>
+  <ul>
+    <li><strong>Zero Headless Scrapers:</strong> We never use Puppeteer, Playwright, or cookie scrapers that trigger Meta shadowbans.</li>
+    <li><strong>Strict Human Gate:</strong> AI generates high-converting drafts, but a human must explicitly approve before any DM is sent.</li>
+    <li><strong>Multi-Brand Isolation:</strong> Bearvana and other brands maintain separate encrypted OAuth tokens and rate limit quotas.</li>
+  </ul>
+
+  <div class="footer">
+    <div>BarakahSoft LLC • Wyoming, USA • Md Shakil A. (Founder)</div>
+    <div>12+ Years Experience • Former Engineering Lead at Legiit ($1M ARR)</div>
+  </div>
+</body>
+</html>
