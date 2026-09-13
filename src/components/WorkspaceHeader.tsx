@@ -2,7 +2,8 @@
 
 import React from "react";
 import { BrandProfile } from "@/lib/types";
-import { ShieldCheck, Instagram, Video, CheckCircle2, AlertCircle, Clock } from "lucide-react";
+import { ShieldCheck, Video, CheckCircle2, AlertCircle, Clock } from "lucide-react";
+import { Instagram } from "@/components/SocialIcons";
 
 interface WorkspaceHeaderProps {
   brand: BrandProfile;

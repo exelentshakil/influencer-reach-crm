@@ -4,12 +4,12 @@ import React from "react";
 import { InfluencerRecord } from "@/lib/types";
 import { TEAM_MEMBERS } from "@/lib/constants";
 import { formatCompactNumber, getStageConfig, cn } from "@/lib/utils";
+import { Instagram } from "@/components/SocialIcons";
 import {
   TrendingUp,
   Users,
   CheckCircle2,
   Clock,
-  Instagram,
   Video,
   BarChart3,
   Award,

@@ -11,7 +11,6 @@ import { formatCompactNumber, getStageConfig, cn } from "@/lib/utils";
 import {
   Search,
   Filter,
-  Instagram,
   Video,
   CheckCircle2,
   AlertTriangle,
@@ -27,6 +26,7 @@ import {
   ArrowRight,
   MessageSquare
 } from "lucide-react";
+import { Instagram } from "@/components/SocialIcons";
 
 interface InfluencerCrmPipelineProps {
   creators: InfluencerRecord[];
@@ -275,7 +275,9 @@ export function InfluencerCrmPipeline({
                                   {creator.name}
                                 </span>
                                 {creator.verifiedBadge && (
-                                  <ShieldCheck className="h-3.5 w-3.5 text-blue-500" title="Verified Creator" />
+                                  <span title="Verified Creator">
+                                    <ShieldCheck className="h-3.5 w-3.5 text-blue-500" />
+                                  </span>
                                 )}
                               </div>
                               <div className="flex items-center gap-2 text-[11px] text-[var(--color-text-muted)]">
@@ -330,7 +332,7 @@ export function InfluencerCrmPipeline({
                             }
                             className={cn(
                               "text-xs font-bold rounded-lg px-2.5 py-1 border cursor-pointer font-mono outline-none",
-                              stageConfig.color
+                              stageConfig.badgeClass
                             )}
                           >
                             <option value="DRAFT_READY">Draft Ready</option>

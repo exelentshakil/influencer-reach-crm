@@ -14,13 +14,13 @@ import {
   Send,
   RotateCcw,
   ExternalLink,
-  Instagram,
   Video,
   Clock,
   UserCheck,
   Check,
   FileCheck
 } from "lucide-react";
+import { Instagram } from "@/components/SocialIcons";
 
 interface OutreachComposerDrawerProps {
   creator: InfluencerRecord | null;

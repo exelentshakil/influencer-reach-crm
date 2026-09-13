@@ -112,17 +112,18 @@ export default function HomePage() {
       {/* Global Navbar */}
       <Navbar
         activeTab={activeTab}
-        onTabChange={(tab) => {
+        setActiveTab={(tab) => {
           setActiveTab(tab);
           if (tab === "composer" && !selectedCreatorForComposer) {
-            // Default to the first creator needing review
             const candidate = brandCreators.find((c) => c.pipelineStage === "DRAFT_READY") || brandCreators[0];
             if (candidate) setSelectedCreatorForComposer(candidate);
           }
         }}
-        activeBrand={activeBrand}
         brands={brands}
+        selectedBrandId={activeBrandId}
         onSelectBrand={(brandId) => setActiveBrandId(brandId)}
+        pendingApprovalsCount={pendingApprovals}
+        totalCreatorsCount={brandCreators.length}
         onResetDemo={handleResetDemo}
       />
 

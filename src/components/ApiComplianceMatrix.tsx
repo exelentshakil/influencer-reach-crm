@@ -10,7 +10,6 @@ import {
   XCircle,
   Code2,
   Lock,
-  Instagram,
   Video,
   ExternalLink,
   ChevronDown,
@@ -20,6 +19,7 @@ import {
   Check
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Instagram } from "@/components/SocialIcons";
 
 export function ApiComplianceMatrix() {
   const [selectedCategory, setSelectedCategory] = useState<string>("ALL");

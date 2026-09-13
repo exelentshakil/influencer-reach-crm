@@ -16,29 +16,35 @@ import {
 } from "lucide-react";
 import { BrandProfile } from "@/lib/types";
 
-interface NavbarProps {
+export interface NavbarProps {
   activeTab: "pipeline" | "composer" | "compliance" | "analytics";
   setActiveTab: (tab: "pipeline" | "composer" | "compliance" | "analytics") => void;
+  onTabChange?: (tab: "pipeline" | "composer" | "compliance" | "analytics") => void;
   brands: BrandProfile[];
   selectedBrandId: string;
   onSelectBrand: (brandId: string) => void;
-  pendingApprovalsCount: number;
-  totalCreatorsCount: number;
+  pendingApprovalsCount?: number;
+  totalCreatorsCount?: number;
   onResetDemo: () => void;
 }
 
 export function Navbar({
   activeTab,
   setActiveTab,
+  onTabChange,
   brands,
   selectedBrandId,
   onSelectBrand,
-  pendingApprovalsCount,
-  totalCreatorsCount,
+  pendingApprovalsCount = 0,
+  totalCreatorsCount = 0,
   onResetDemo
 }: NavbarProps) {
   const { theme, setTheme } = useTheme();
-  const activeBrand = brands.find((b) => b.id === selectedBrandId) || brands[0];
+
+  const handleTabClick = (tab: "pipeline" | "composer" | "compliance" | "analytics") => {
+    setActiveTab(tab);
+    if (onTabChange) onTabChange(tab);
+  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-panel)]/95 backdrop-blur-md">
@@ -88,7 +94,7 @@ export function Navbar({
           {/* Center Navigation Tabs */}
           <nav className="hidden md:flex items-center space-x-1 rounded-xl bg-[var(--color-panel-subtle)] p-1 border border-[var(--color-border)]">
             <button
-              onClick={() => setActiveTab("pipeline")}
+              onClick={() => handleTabClick("pipeline")}
               className={`flex items-center space-x-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
                 activeTab === "pipeline"
                   ? "bg-[var(--color-panel)] text-blue-600 dark:text-blue-400 shadow-xs border border-[var(--color-border)]"
@@ -103,7 +109,7 @@ export function Navbar({
             </button>
 
             <button
-              onClick={() => setActiveTab("composer")}
+              onClick={() => handleTabClick("composer")}
               className={`flex items-center space-x-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
                 activeTab === "composer"
                   ? "bg-[var(--color-panel)] text-blue-600 dark:text-blue-400 shadow-xs border border-[var(--color-border)]"
@@ -120,7 +126,7 @@ export function Navbar({
             </button>
 
             <button
-              onClick={() => setActiveTab("compliance")}
+              onClick={() => handleTabClick("compliance")}
               className={`flex items-center space-x-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
                 activeTab === "compliance"
                   ? "bg-[var(--color-panel)] text-blue-600 dark:text-blue-400 shadow-xs border border-[var(--color-border)]"
@@ -135,7 +141,7 @@ export function Navbar({
             </button>
 
             <button
-              onClick={() => setActiveTab("analytics")}
+              onClick={() => handleTabClick("analytics")}
               className={`flex items-center space-x-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
                 activeTab === "analytics"
                   ? "bg-[var(--color-panel)] text-blue-600 dark:text-blue-400 shadow-xs border border-[var(--color-border)]"
@@ -175,17 +181,17 @@ export function Navbar({
         {/* Mobile Navigation */}
         <div className="flex md:hidden items-center justify-between space-x-1 border-t border-[var(--color-border)] py-2 text-xs overflow-x-auto">
           <button
-            onClick={() => setActiveTab("pipeline")}
+            onClick={() => handleTabClick("pipeline")}
             className={`px-3 py-1 rounded-md shrink-0 font-medium ${
               activeTab === "pipeline"
                 ? "bg-blue-600 text-white font-bold"
                 : "text-[var(--color-text-muted)]"
             }`}
           >
-            CRM Pipeline ({totalCreatorsCount})
+            Pipeline ({totalCreatorsCount})
           </button>
           <button
-            onClick={() => setActiveTab("composer")}
+            onClick={() => handleTabClick("composer")}
             className={`px-3 py-1 rounded-md shrink-0 font-medium ${
               activeTab === "composer"
                 ? "bg-blue-600 text-white font-bold"
@@ -195,7 +201,7 @@ export function Navbar({
             Outreach ({pendingApprovalsCount})
           </button>
           <button
-            onClick={() => setActiveTab("compliance")}
+            onClick={() => handleTabClick("compliance")}
             className={`px-3 py-1 rounded-md shrink-0 font-medium ${
               activeTab === "compliance"
                 ? "bg-blue-600 text-white font-bold"
@@ -205,7 +211,7 @@ export function Navbar({
             API Compliance
           </button>
           <button
-            onClick={() => setActiveTab("analytics")}
+            onClick={() => handleTabClick("analytics")}
             className={`px-3 py-1 rounded-md shrink-0 font-medium ${
               activeTab === "analytics"
                 ? "bg-blue-600 text-white font-bold"
