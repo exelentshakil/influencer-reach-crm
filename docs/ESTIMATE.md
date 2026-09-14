@@ -3,9 +3,10 @@
 **Project:** Platform-Compliant Influencer Outreach & Relationship CRM Engine  
 **Client:** Zeid • Bearvana • Hoboken, NJ  
 **Engineering Partner:** Md Shakil A. • Founder, BarakahSoft LLC  
-**Primary Hourly Rate:** $34.00/hr (Calibrated to client historical average & optimal delivery velocity)  
-**Estimated Timeline:** 10 Working Days (2 Weeks at 36 hrs/week)  
+**Primary Hourly Rate:** $37.50/hr (Turnkey Delivery Velocity)  
+**Estimated Timeline:** 10 Working Days (2 Weeks at 40 hrs/week)  
 **Prototype Deliverable:** Live Interactive Demo Deployed at $0 (Phase 0 Complete)  
+**Total Turnkey Investment:** **$3,000.00 Flat** (4 Milestones @ $750.00)  
 
 ---
 
@@ -13,24 +14,21 @@
 
 | Phase | Milestone Description | Estimated Hours | Billed Rate | Total Investment |
 | :--- | :--- | :---: | :---: | :---: |
-| **Phase 0** | **Rapid Architecture Spike & Live Prototype**<br>• Custom Next.js 15 interactive prototype tailored to Bearvana<br>• Simulated Meta Graph API v20.0 & TikTok Business endpoints<br>• Live `/api/compliance` audit matrix & human review gate drawer<br>• Delivered within 30 min of brief to demonstrate zero-bot compliance | **2 hrs (Spike)** | **$0.00/hr** | **$0.00** *(Completed & Live)* |
-| **Phase 1** | **Official Meta & TikTok API Authentication & Token Vault**<br>• Meta App review setup for Instagram Graph API v20.0 (`instagram_basic`, `pages_read_engagement`)<br>• TikTok for Business Developer App integration<br>• Multi-brand encrypted token vault with automatic refresh in Supabase<br>• Real rate-limit monitors and throttle handlers | **18 hrs** | $34.00/hr | $612.00 |
-| **Phase 2** | **Grounded AI Outreach Personalization & Post Auditing**<br>• Official Business Discovery media fetcher for recent reels & videos<br>• Claude / OpenAI API integration with strict brand prompt templates<br>• Zero-hallucination icebreakers grounded in real public captions<br>• Tone selectors (Casual & Warm, Founder Zeid, VIP Seeding) | **14 hrs** | $34.00/hr | $476.00 |
-| **Phase 3** | **Human-in-the-Loop Gate, Team Roles & SLA Engine**<br>• Role-based permissions (Zeid Owner, Queen Y. Sourcing, Sarah M. Campaigns)<br>• 1-Click approval with timestamped audit logging<br>• 24h/48h/72h SLA reminder queues powered by Inngest durable workflows<br>• Deep-link generation into Instagram Direct Web / Mobile App | **16 hrs** | $34.00/hr | $544.00 |
-| **Phase 4** | **Relationship CRM, Conversation Webhooks & Analytics**<br>• Webhook receiver for incoming Instagram Business Direct events<br>• Stage tracking (Draft Ready → Approved → Sent → Negotiating → Shipped → Live)<br>• Product gifting & tracking number dispatch logging<br>• CSV export & conversion reporting (response rate, reach, CPA) | **15 hrs** | $34.00/hr | $510.00 |
-| **Phase 5** | **Security Hardening, Evals & Production Deployment**<br>• Zero-bot policy audit confirming 100% Upwork & Platform TOS compliance<br>• Production deployment to Vercel with custom domain configuration<br>• 14 days of post-launch warranty, monitoring, and live team onboarding | **9 hrs** | $34.00/hr | $306.00 |
-| **TOTALS** | **Complete Turnkey Production System** | **72 hrs** | **$34.00/hr** | **$2,448.00** |
+| **Phase 0** | **Interactive Working Prototype & Compliance Matrix**<br>• Fully interactive UI with Next.js 15, Tailwind v4, dark/light modes<br>• Real mock data for Bearvana & AuraGlow Organics<br>• Feature-by-feature API compliance matrix at `/api/compliance`<br>• Human-in-the-loop review drawer & deterministic health check | **8 hrs** | **$0.00/hr** | **$0.00** *(Completed & Live)* |
+| **Phase 1** | **Official Meta & TikTok API Authentication & Token Vault**<br>• Meta App review setup for Instagram Graph API v20.0 (`instagram_basic`, `pages_read_engagement`)<br>• TikTok for Business Developer App integration<br>• Multi-brand encrypted token vault with automatic refresh in Supabase<br>• Real rate-limit monitors and throttle handlers | **20 hrs** | $37.50/hr | $750.00 |
+| **Phase 2** | **Grounded AI Outreach Personalization & Post Auditing**<br>• Official Business Discovery media fetcher for recent reels & videos<br>• Claude / OpenAI API integration with strict brand prompt templates<br>• Zero-hallucination icebreakers grounded in real public captions<br>• Tone selectors (Casual & Warm, Founder Zeid, VIP Seeding) | **20 hrs** | $37.50/hr | $750.00 |
+| **Phase 3** | **Human-in-the-Loop Gate, Team Roles & SLA Engine**<br>• Role-based permissions (Zeid Owner, Queen Y. Sourcing, Sarah M. Campaigns)<br>• 1-Click approval with timestamped audit logging<br>• 24h/48h/72h SLA reminder queues powered by Inngest durable workflows<br>• Deep-link generation into Instagram Direct Web / Mobile App | **20 hrs** | $37.50/hr | $750.00 |
+| **Phase 4** | **Relationship CRM, Inbound Webhooks & Final Launch**<br>• Inbound DM webhook sync from verified business inboxes<br>• Stage tracking (Draft Ready → Approved → Sent → Negotiating → Shipped → Live)<br>• Product gifting & tracking number dispatch logging<br>• CSV export & conversion reporting (response rate, reach, CPA)<br>• Production deployment on Vercel with 14 days warranty | **20 hrs** | $37.50/hr | $750.00 |
+| **TOTALS** | **Complete Turnkey Production System** | **80 hrs** | **$37.50/hr** | **$3,000.00** |
 
 ---
 
-## 2. Fixed-Price Milestone Alternative
+## 2. Fixed-Price Milestone Schedule ($3,000.00 Total)
 
-For clients who prefer fixed milestones over hourly tracking:
-
-- **Milestone 1 (Days 1–4): $950.00** — Live API Connections, Brand Vault, & Creator Discovery Pipeline.
-- **Milestone 2 (Days 5–8): $950.00** — Grounded AI Composer, Human Gate, & Team Member SLA Reminders.
-- **Milestone 3 (Days 9–10): $548.00** — Conversation Tracking, Webhooks, Analytics Export, & Final Launch.
-- **Total Fixed Contract:** **$2,448.00**
+- **Milestone 1 (Days 1–3): $750.00** — API Authentication Vault, Token Refresh & Creator Discovery Pipeline.
+- **Milestone 2 (Days 4–5): $750.00** — Grounded AI Personalization Engine & Recent Media Analysis.
+- **Milestone 3 (Days 6–8): $750.00** — 1-Click Human Review Gate, Role Permissions & Inngest SLA Queues.
+- **Milestone 4 (Days 9–10): $750.00** — Inbound Webhooks, Stage Tracking, Analytics Export & Production Deployment.
 
 ---
 
@@ -43,7 +41,7 @@ For clients who prefer fixed milestones over hourly tracking:
 - **Social APIs:**
   - Meta Instagram Graph API v20.0 (Business Discovery, Webhooks).
   - TikTok for Business API (Creator Info, Display API).
-- **Deployment:** Vercel Fluid Compute with sub-second Edge caching.
+- **Deployment:** Vercel Fluid Compute with Edge caching.
 
 ---
 

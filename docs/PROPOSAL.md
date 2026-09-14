@@ -15,6 +15,6 @@ answers to your questions:
 • meta & tiktok apis: meta graph api v20.0 (business discovery, webhooks) and tiktok creator api.
 • stack: next.js 15, typescript, supabase token vault, inngest sla queues, claude/openai.
 • official api support: public metrics and recent media are 100% supported via official discovery apis. bulk automated dms violate platform terms, so our system enforces a 1-click human review gate before dispatch.
-• timeline & budget: 10 days, $34/hr (detailed scope in attached estimate pdf).
+• timeline & budget: 10 days, $3,000 flat (4 milestones in attached estimate pdf).
 
 open to a quick call to walk through the compliance matrix?

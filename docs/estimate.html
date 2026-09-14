@@ -2,201 +2,366 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Production Implementation Estimate - Bearvana Influencer CRM</title>
+  <title>Production Scope & Estimate - Bearvana Influencer CRM</title>
   <style>
     @page {
-      size: letter;
-      margin: 20mm;
+      size: letter portrait;
+      margin: 12mm 14mm 12mm 14mm;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: #0f172a;
-      line-height: 1.5;
-      font-size: 13px;
+      line-height: 1.4;
+      font-size: 11.5px;
       margin: 0;
       padding: 0;
+      background: #ffffff;
     }
     .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
       border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 16px;
-      margin-bottom: 20px;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
     }
-    .badge {
-      display: inline-block;
-      background: #eff6ff;
-      color: #2563eb;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 9999px;
+    .brand-title {
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border: 1px solid #bfdbfe;
-      margin-bottom: 6px;
+      color: #2563eb;
+      margin-bottom: 3px;
     }
     h1 {
-      font-size: 22px;
-      margin: 0 0 6px 0;
-      color: #0f172a;
+      font-size: 19px;
       font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 3px 0;
+      letter-spacing: -0.02em;
     }
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 12px;
-      margin-top: 12px;
+    .subtitle {
       font-size: 11px;
-    }
-    .meta-item strong {
       color: #475569;
+      margin: 0;
+    }
+    .meta-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 10.5px;
+      text-align: right;
+      line-height: 1.45;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .meta-card strong {
+      color: #0f172a;
+    }
+    .live-badge {
+      display: inline-block;
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+      font-weight: 700;
+      padding: 1.5px 7px;
+      border-radius: 9999px;
+      font-size: 9.5px;
+      text-transform: uppercase;
+      margin-left: 4px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 14px 0 8px 0;
+    }
+    .section-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #1e293b;
+      border-left: 3.5px solid #2563eb;
+      padding-left: 8px;
+      margin: 0;
+    }
+    .section-meta {
+      font-size: 10px;
+      color: #64748b;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 11px;
-    }
-    th, td {
-      border: 1px solid #cbd5e1;
-      padding: 8px 10px;
-      text-align: left;
+      margin-bottom: 14px;
     }
     th {
       background: #f1f5f9;
       color: #334155;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 10px;
+      font-size: 9.5px;
+      letter-spacing: 0.04em;
+      border: 1px solid #cbd5e1;
+      padding: 7px 9px;
+      text-align: left;
     }
-    .total-row {
-      background: #f8fafc;
+    td {
+      border: 1px solid #e2e8f0;
+      padding: 7px 9px;
+      font-size: 10.5px;
+      vertical-align: top;
+    }
+    .phase-num {
       font-weight: 800;
-      font-size: 12px;
-    }
-    h2 {
-      font-size: 14px;
-      border-left: 3px solid #2563eb;
-      padding-left: 8px;
-      margin: 20px 0 10px 0;
       color: #1e293b;
+      font-size: 10.5px;
+      white-space: nowrap;
     }
-    ul {
-      margin: 6px 0;
-      padding-left: 18px;
+    .phase-name {
+      font-weight: 700;
+      color: #0f172a;
       font-size: 11px;
     }
-    li {
-      margin-bottom: 4px;
-    }
-    .footer {
-      margin-top: 30px;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 12px;
+    .phase-desc {
+      color: #475569;
       font-size: 10px;
-      color: #64748b;
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+    .phase-0-row {
+      background: #f0fdf4;
+    }
+    .phase-0-badge {
+      color: #15803d;
+      font-weight: 800;
+    }
+    .total-row {
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 800;
+      border: 1px solid #0f172a;
+    }
+    .total-row td {
+      border: 1px solid #0f172a;
+      padding: 8px 9px;
+      font-size: 11.5px;
+    }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .card-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #f8fafc;
+      padding: 10px 12px;
+    }
+    .card-box-title {
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #1e293b;
+      margin: 0 0 7px 0;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4px;
+    }
+    .milestone-item {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px dotted #cbd5e1;
+      padding: 4px 0;
+      font-size: 10px;
+    }
+    .milestone-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .milestone-name {
+      color: #334155;
+    }
+    .milestone-val {
+      font-weight: 800;
+      color: #0f172a;
+      font-family: ui-monospace, monospace;
+      white-space: nowrap;
+    }
+    .guardrail-item {
+      font-size: 10px;
+      color: #334155;
+      margin-bottom: 4px;
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.35;
+    }
+    .guardrail-item:last-child {
+      margin-bottom: 0;
+    }
+    .guardrail-item::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #16a34a;
+      font-weight: 800;
+      font-size: 9.5px;
+    }
+    .footer {
+      border-top: 1.5px solid #e2e8f0;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9px;
+      color: #64748b;
+    }
+    .footer strong {
+      color: #334155;
     }
   </style>
 </head>
 <body>
+  <!-- Executive Header -->
   <div class="header">
-    <div class="badge">Production Scope & Architecture</div>
-    <h1>Platform-Compliant Influencer Outreach & CRM</h1>
-    <div class="meta-grid">
-      <div class="meta-item"><strong>Client:</strong> Zeid • Bearvana (Hoboken, NJ)</div>
-      <div class="meta-item"><strong>Engineering Partner:</strong> Md Shakil A. • BarakahSoft LLC</div>
-      <div class="meta-item"><strong>Calibrated Rate:</strong> $34.00 / hour (Target Velocity)</div>
-      <div class="meta-item"><strong>Timeline:</strong> 10 Working Days (36 hrs/week)</div>
-      <div class="meta-item"><strong>Prototype Deliverable:</strong> Interactive Web Demo ($0 Phase 0)</div>
-      <div class="meta-item"><strong>Live URL:</strong> https://influencer-reach-crm.vercel.app</div>
+    <div>
+      <div class="brand-title">BarakahSoft LLC • Production Architecture Scope</div>
+      <h1>Platform-Compliant Influencer Outreach & CRM</h1>
+      <p class="subtitle">Architected for Meta Graph API v20.0 & TikTok for Business • 100% Platform Compliant</p>
+    </div>
+    <div class="meta-card">
+      <div><strong>Client:</strong> Zeid • Bearvana (Hoboken, NJ)</div>
+      <div><strong>Timeline:</strong> 10 Business Days (2 Weeks)</div>
+      <div><strong>Project Investment:</strong> <strong>$3,000.00 Flat Turnkey</strong></div>
+      <div><strong>Live Prototype:</strong> <span class="live-badge">Live & Audited</span></div>
     </div>
   </div>
 
-  <h2>1. Scope of Work & Milestone Breakdown</h2>
+  <!-- Scope Table -->
+  <div class="section-header">
+    <h2 class="section-title">Milestone Scope & Delivery Schedule</h2>
+    <div class="section-meta">https://influencer-reach-crm.vercel.app</div>
+  </div>
+
   <table>
     <thead>
       <tr>
-        <th style="width: 15%;">Phase</th>
-        <th style="width: 50%;">Milestone Deliverable</th>
-        <th style="width: 10%;">Hours</th>
-        <th style="width: 12%;">Rate</th>
-        <th style="width: 13%;">Total</th>
+        <th style="width: 14%;">Phase</th>
+        <th style="width: 54%;">Engineering Deliverables & Architecture</th>
+        <th style="width: 10%; text-align: center;">Hours</th>
+        <th style="width: 10%; text-align: right;">Rate</th>
+        <th style="width: 12%; text-align: right;">Investment</th>
       </tr>
     </thead>
     <tbody>
-      <tr style="background: #f0fdf4;">
-        <td><strong>Phase 0</strong></td>
-        <td><strong>Rapid Architecture Spike & Working Prototype</strong><br>Custom Next.js 15 UI tailored to Bearvana context, simulated Graph v20.0/TikTok APIs, live /api/compliance audit. Spun up immediately to prove zero-bot platform compliance.</td>
-        <td>2 hrs (Spike)</td>
-        <td>$0.00</td>
-        <td><strong>$0.00 (Live)</strong></td>
+      <tr class="phase-0-row">
+        <td class="phase-num"><span class="phase-0-badge">Phase 0</span></td>
+        <td>
+          <div class="phase-name">Interactive Working Prototype & Compliance Matrix</div>
+          <div class="phase-desc">Interactive Next.js 15 UI tailored to Bearvana context, simulated Graph & TikTok APIs, /api/compliance policy matrix, dark/light theme, human review drawer. Delivered upfront to prove zero account risk.</div>
+        </td>
+        <td style="text-align: center; font-weight: 700;">8 hrs</td>
+        <td style="text-align: right; color: #16a34a; font-weight: 700;">$0.00</td>
+        <td style="text-align: right; font-weight: 800; color: #16a34a;">$0.00 (Live)</td>
       </tr>
       <tr>
-        <td><strong>Phase 1</strong></td>
-        <td><strong>Official Meta & TikTok API Authentication</strong><br>Meta Graph API v20.0 Business Discovery, TikTok Creator API, multi-brand Supabase token vault, rate limit handlers.</td>
-        <td>18 hrs</td>
-        <td>$34.00</td>
-        <td>$612.00</td>
+        <td class="phase-num">Phase 1</td>
+        <td>
+          <div class="phase-name">Official Meta & TikTok API Authentication & Token Vault</div>
+          <div class="phase-desc">Meta Business Discovery setup, TikTok Creator API, multi-brand Supabase encrypted token vault with auto-refresh, and platform rate-limit handlers.</div>
+        </td>
+        <td style="text-align: center;">20 hrs</td>
+        <td style="text-align: right;">$37.50</td>
+        <td style="text-align: right; font-weight: 700;">$750.00</td>
       </tr>
       <tr>
-        <td><strong>Phase 2</strong></td>
-        <td><strong>Grounded AI Personalization Engine</strong><br>Public media auditing, context extraction from real reels/videos, Claude/OpenAI prompt pipelines, tone selectors.</td>
-        <td>14 hrs</td>
-        <td>$34.00</td>
-        <td>$476.00</td>
+        <td class="phase-num">Phase 2</td>
+        <td>
+          <div class="phase-name">Grounded AI Outreach Personalization Engine</div>
+          <div class="phase-desc">Automated ingestion of recent public reels/videos via official discovery, Claude/OpenAI prompt pipelines, zero-hallucination hooks, tone presets.</div>
+        </td>
+        <td style="text-align: center;">20 hrs</td>
+        <td style="text-align: right;">$37.50</td>
+        <td style="text-align: right; font-weight: 700;">$750.00</td>
       </tr>
       <tr>
-        <td><strong>Phase 3</strong></td>
-        <td><strong>Human-in-the-Loop Gate & SLA Engine</strong><br>1-click approval workflow, role-based assignments (Zeid, Queen Y.), 48h SLA reminders, Inngest queues.</td>
-        <td>16 hrs</td>
-        <td>$34.00</td>
-        <td>$544.00</td>
+        <td class="phase-num">Phase 3</td>
+        <td>
+          <div class="phase-name">Human-in-the-Loop Review Gate, Roles & SLA Queues</div>
+          <div class="phase-desc">1-click approval workflow, role assignments (Zeid, Queen Y.), 48h SLA reminders via Inngest durable functions, native Instagram Direct deep-links.</div>
+        </td>
+        <td style="text-align: center;">20 hrs</td>
+        <td style="text-align: right;">$37.50</td>
+        <td style="text-align: right; font-weight: 700;">$750.00</td>
       </tr>
       <tr>
-        <td><strong>Phase 4</strong></td>
-        <td><strong>CRM Pipeline, Webhooks & Reporting</strong><br>Instagram Direct webhook sync, stage transitions, product dispatch tracking, CSV export & response analytics.</td>
-        <td>15 hrs</td>
-        <td>$34.00</td>
-        <td>$510.00</td>
-      </tr>
-      <tr>
-        <td><strong>Phase 5</strong></td>
-        <td><strong>Security Audit & Production Deployment</strong><br>Zero-bot policy validation, Vercel Fluid Compute deployment, team onboarding, 14 days live support.</td>
-        <td>9 hrs</td>
-        <td>$34.00</td>
-        <td>$306.00</td>
+        <td class="phase-num">Phase 4</td>
+        <td>
+          <div class="phase-name">Relationship CRM, Webhooks & Production Launch</div>
+          <div class="phase-desc">Inbound DM webhook sync, full stage pipeline tracking, gifting dispatch logs, CSV analytics export, Vercel deployment & 14 days warranty.</div>
+        </td>
+        <td style="text-align: center;">20 hrs</td>
+        <td style="text-align: right;">$37.50</td>
+        <td style="text-align: right; font-weight: 700;">$750.00</td>
       </tr>
       <tr class="total-row">
-        <td colspan="2">TOTAL TURNKEY PRODUCTION SYSTEM</td>
-        <td>72 hrs</td>
-        <td>$34.00</td>
-        <td>$2,448.00</td>
+        <td colspan="2">TOTAL PRODUCTION TURNKEY INVESTMENT</td>
+        <td style="text-align: center;">80 hrs</td>
+        <td style="text-align: right;">$37.50</td>
+        <td style="text-align: right; font-size: 12.5px;">$3,000.00</td>
       </tr>
     </tbody>
   </table>
 
-  <h2>2. Fixed-Price Milestone Option</h2>
-  <ul>
-    <li><strong>Milestone 1 (Days 1–4): $950.00</strong> — Live Social API Connections, Multi-Brand Vault & Creator Discovery.</li>
-    <li><strong>Milestone 2 (Days 5–8): $950.00</strong> — Grounded AI Composer, Human Gate & Team Member SLA Reminders.</li>
-    <li><strong>Milestone 3 (Days 9–10): $548.00</strong> — Conversation Tracking, Webhooks, Analytics Export & Final Launch.</li>
-  </ul>
+  <!-- Lower 2-Column Section: Milestones & Guardrails -->
+  <div class="grid-2col">
+    <!-- Milestone Billing Box -->
+    <div class="card-box">
+      <div class="card-box-title">Fixed-Price Milestone Schedule ($3,000 Total)</div>
+      <div class="milestone-item">
+        <span class="milestone-name"><strong>Milestone 1 (Days 1–3):</strong> API Vault & Discovery</span>
+        <span class="milestone-val">$750.00</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name"><strong>Milestone 2 (Days 4–5):</strong> Grounded AI Outreach</span>
+        <span class="milestone-val">$750.00</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name"><strong>Milestone 3 (Days 6–8):</strong> Human Gate & SLA Engine</span>
+        <span class="milestone-val">$750.00</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name"><strong>Milestone 4 (Days 9–10):</strong> CRM Pipeline & Launch</span>
+        <span class="milestone-val">$750.00</span>
+      </div>
+    </div>
 
-  <h2>3. Why This Protects Bearvana's Social Accounts</h2>
-  <ul>
-    <li><strong>Zero Headless Scrapers:</strong> We never use Puppeteer, Playwright, or cookie scrapers that trigger Meta shadowbans.</li>
-    <li><strong>Strict Human Gate:</strong> AI generates high-converting drafts, but a human must explicitly approve before any DM is sent.</li>
-    <li><strong>Multi-Brand Isolation:</strong> Bearvana and other brands maintain separate encrypted OAuth tokens and rate limit quotas.</li>
-  </ul>
+    <!-- Account Protection Guardrails Box -->
+    <div class="card-box">
+      <div class="card-box-title">Account Safety & Anti-Ban Architecture</div>
+      <div class="guardrail-item"><strong>Zero Headless Scrapers:</strong> Never uses Puppeteer or cookie hijacking. Connects 100% via official Meta Graph API v20.0 & TikTok Business endpoints.</div>
+      <div class="guardrail-item"><strong>Mandatory Human Gate:</strong> AI drafts high-converting icebreakers, but zero automated DMs can be dispatched without explicit human review.</div>
+      <div class="guardrail-item"><strong>Multi-Brand Isolation:</strong> Bearvana and other portfolio brands maintain fully isolated encrypted OAuth vaults and rate limit quotas.</div>
+    </div>
+  </div>
 
+  <!-- Footer -->
   <div class="footer">
-    <div>BarakahSoft LLC • Wyoming, USA • Md Shakil A. (Founder)</div>
-    <div>12+ Years Experience • Former Engineering Lead at Legiit ($1M ARR)</div>
+    <div><strong>BarakahSoft LLC</strong> • Wyoming, USA • Md Shakil A. (Founder, 12+ Years Full-Stack)</div>
+    <div>Former Lead Engineer at Legiit ($1M ARR Command Center) • Verified Upwork Partner</div>
+    <div>Live Demo: <strong>influencer-reach-crm.vercel.app</strong></div>
   </div>
 </body>
 </html>
