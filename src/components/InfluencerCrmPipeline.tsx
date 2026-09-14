@@ -218,15 +218,15 @@ export function InfluencerCrmPipeline({
       {viewMode === "TABLE" && (
         <div className="border border-[var(--color-border)] rounded-xl bg-[var(--color-panel)] overflow-hidden shadow-2xs">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs min-w-[1100px]">
+            <table className="w-full text-left text-xs min-w-[960px]">
               <thead className="bg-[var(--color-panel-subtle)] border-b border-[var(--color-border)] text-xs font-semibold text-[var(--color-text-secondary)] uppercase tracking-wider">
                 <tr>
-                  <th className="py-3.5 px-4 sm:px-5 font-semibold w-[260px] whitespace-nowrap">Creator / Channel</th>
-                  <th className="py-3.5 px-4 sm:px-5 font-semibold w-[190px] whitespace-nowrap">Audience & Reach</th>
-                  <th className="py-3.5 px-4 sm:px-5 font-semibold min-w-[260px] whitespace-nowrap">Recent Verified Media</th>
-                  <th className="py-3.5 px-4 sm:px-5 font-semibold w-[170px] whitespace-nowrap">Pipeline Stage</th>
-                  <th className="py-3.5 px-4 sm:px-5 font-semibold w-[180px] whitespace-nowrap">Assignee & SLA</th>
-                  <th className="py-3.5 px-4 sm:px-5 text-right font-semibold w-[160px] whitespace-nowrap">Human Review Gate</th>
+                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[22%] whitespace-nowrap">Creator / Channel</th>
+                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[17%] whitespace-nowrap">Audience & Reach</th>
+                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[26%] whitespace-nowrap">Recent Verified Media</th>
+                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[13%] whitespace-nowrap">Pipeline Stage</th>
+                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[12%] whitespace-nowrap">Assignee & SLA</th>
+                  <th className="py-3.5 px-3 sm:px-4 text-right font-semibold w-[10%] whitespace-nowrap">Human Review Gate</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[var(--color-border-subtle)]">
@@ -245,7 +245,7 @@ export function InfluencerCrmPipeline({
                         className="hover:bg-[var(--color-panel-subtle)]/60 transition-colors group"
                       >
                         {/* Creator Profile */}
-                        <td className="py-3.5 px-4 sm:px-5 w-[260px]">
+                        <td className="py-3.5 px-3 sm:px-4">
                           <div className="flex items-center space-x-3">
                             <div className="relative shrink-0">
                               <img
@@ -287,7 +287,7 @@ export function InfluencerCrmPipeline({
                         </td>
 
                         {/* Metrics */}
-                        <td className="py-3.5 px-4 sm:px-5 w-[190px] whitespace-nowrap">
+                        <td className="py-3.5 px-3 sm:px-4 whitespace-nowrap">
                           <div className="font-mono font-bold text-sm sm:text-base text-[var(--color-text-primary)] tabular-nums">
                             {formatCompactNumber(creator.followers)}
                           </div>
@@ -301,7 +301,7 @@ export function InfluencerCrmPipeline({
                         </td>
 
                         {/* Recent Verified Content */}
-                        <td className="py-3.5 px-4 sm:px-5 min-w-[260px] max-w-sm">
+                        <td className="py-3.5 px-3 sm:px-4 max-w-xs">
                           <p className="text-xs sm:text-[13px] text-[var(--color-text-primary)] truncate font-normal leading-snug" title={creator.recentPost.caption}>
                             &ldquo;{creator.recentPost.caption}&rdquo;
                           </p>
@@ -323,7 +323,7 @@ export function InfluencerCrmPipeline({
                         </td>
 
                         {/* Pipeline Stage with Quick Selector */}
-                        <td className="py-3.5 px-4 sm:px-5 w-[170px] whitespace-nowrap">
+                        <td className="py-3.5 px-3 sm:px-4 whitespace-nowrap">
                           <select
                             value={creator.pipelineStage}
                             onChange={(e) =>
@@ -348,7 +348,7 @@ export function InfluencerCrmPipeline({
                         </td>
 
                         {/* Assignee & SLA */}
-                        <td className="py-3.5 px-4 sm:px-5 w-[180px] whitespace-nowrap">
+                        <td className="py-3.5 px-3 sm:px-4 whitespace-nowrap">
                           <select
                             value={creator.assignedTeamMember}
                             onChange={(e) => onUpdateAssignee(creator.id, e.target.value)}
@@ -367,7 +367,7 @@ export function InfluencerCrmPipeline({
                         </td>
 
                         {/* Actions */}
-                        <td className="py-3.5 px-4 sm:px-5 text-right w-[160px] whitespace-nowrap">
+                        <td className="py-3.5 px-3 sm:px-4 text-right whitespace-nowrap">
                           <button
                             onClick={() => onSelectCreatorForComposer(creator)}
                             className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-panel)] hover:bg-[var(--color-brand-primary)] hover:border-[var(--color-brand-primary)] text-[var(--color-text-primary)] hover:text-white text-xs font-semibold transition-all shadow-2xs group/btn whitespace-nowrap shrink-0 cursor-pointer"
