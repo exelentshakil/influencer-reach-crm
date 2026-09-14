@@ -12,7 +12,9 @@ import {
   Moon,
   RotateCcw,
   Sparkles,
-  ChevronDown
+  ChevronDown,
+  Layers,
+  Lock
 } from "lucide-react";
 import { BrandProfile } from "@/lib/types";
 
@@ -52,21 +54,20 @@ export function Navbar({
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Brand Logo & Brand Profile Selector */}
           <div className="flex items-center space-x-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white shadow-xs font-bold">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white shadow-xs font-bold">
               <ShieldCheck className="h-5 w-5" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
                 <span className="text-base font-extrabold tracking-tight text-[var(--color-text-primary)]">
-                  ReachVault.AI
+                  ReachVault
                 </span>
-                <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  100% Policy Compliant
+                <span className="rounded-md bg-blue-500/10 px-1.5 py-0.5 text-[10px] font-bold text-blue-600 dark:text-blue-400 font-mono">
+                  v2.4 Enterprise
                 </span>
               </div>
-              <p className="text-[11px] text-[var(--color-text-muted)] font-medium">
-                Official Meta & TikTok Creator Outreach CRM
+              <p className="text-[10.5px] text-[var(--color-text-muted)] font-medium">
+                Creator Operations & Compliance Engine
               </p>
             </div>
 
@@ -78,7 +79,7 @@ export function Navbar({
                   id="brand-switcher"
                   value={selectedBrandId}
                   onChange={(e) => onSelectBrand(e.target.value)}
-                  className="appearance-none rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] px-3 py-1.5 pr-8 text-xs font-semibold text-[var(--color-text-primary)] focus:border-blue-500 focus:outline-hidden cursor-pointer"
+                  className="appearance-none rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] px-3 py-1.5 pr-8 text-xs font-semibold text-[var(--color-text-primary)] focus:border-blue-500 focus:outline-hidden cursor-pointer shadow-2xs"
                 >
                   {brands.map((b) => (
                     <option key={b.id} value={b.id}>
@@ -91,18 +92,18 @@ export function Navbar({
             </div>
           </div>
 
-          {/* Center Navigation Tabs */}
+          {/* Center Navigation Tabs (Refined Enterprise Design) */}
           <nav className="hidden md:flex items-center space-x-1 rounded-xl bg-[var(--color-panel-subtle)] p-1 border border-[var(--color-border)]">
             <button
               onClick={() => handleTabClick("pipeline")}
-              className={`flex items-center space-x-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
+              className={`flex items-center space-x-2 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
                 activeTab === "pipeline"
                   ? "bg-[var(--color-panel)] text-blue-600 dark:text-blue-400 shadow-xs border border-[var(--color-border)]"
                   : "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
               }`}
             >
               <Users className="h-3.5 w-3.5" />
-              <span>Creator CRM Pipeline</span>
+              <span>Pipeline & Directory</span>
               <span className="rounded-full bg-slate-200 dark:bg-slate-700 px-1.5 py-0.2 text-[10px] font-mono">
                 {totalCreatorsCount}
               </span>
@@ -110,54 +111,65 @@ export function Navbar({
 
             <button
               onClick={() => handleTabClick("composer")}
-              className={`flex items-center space-x-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
+              className={`flex items-center space-x-2 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
                 activeTab === "composer"
                   ? "bg-[var(--color-panel)] text-blue-600 dark:text-blue-400 shadow-xs border border-[var(--color-border)]"
                   : "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
               }`}
             >
               <Send className="h-3.5 w-3.5" />
-              <span>Human-in-Loop Outreach</span>
-              {pendingApprovalsCount > 0 && (
-                <span className="rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 px-1.5 py-0.2 text-[10px] font-mono font-bold">
-                  {pendingApprovalsCount} to review
+              <span>Approval Queue</span>
+              {pendingApprovalsCount > 0 ? (
+                <span className="rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 px-1.5 py-0.2 text-[10px] font-mono font-bold flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
+                  {pendingApprovalsCount} Review
+                </span>
+              ) : (
+                <span className="rounded-full bg-emerald-500/10 text-emerald-600 px-1.5 py-0.2 text-[10px] font-mono font-bold">
+                  Clear
                 </span>
               )}
             </button>
 
             <button
               onClick={() => handleTabClick("compliance")}
-              className={`flex items-center space-x-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
+              className={`flex items-center space-x-2 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
                 activeTab === "compliance"
                   ? "bg-[var(--color-panel)] text-blue-600 dark:text-blue-400 shadow-xs border border-[var(--color-border)]"
                   : "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
               }`}
             >
-              <FileCheck2 className="h-3.5 w-3.5" />
-              <span>Official API Matrix</span>
-              <span className="rounded-full bg-emerald-500/10 px-1.5 py-0.2 text-[9px] text-emerald-600 dark:text-emerald-400 font-mono">
-                Zero Bot Risk
+              <Lock className="h-3.5 w-3.5" />
+              <span>API Governance</span>
+              <span className="rounded-full bg-emerald-500/10 px-1.5 py-0.2 text-[9px] text-emerald-600 dark:text-emerald-400 font-mono font-bold">
+                v20.0 Verified
               </span>
             </button>
 
             <button
               onClick={() => handleTabClick("analytics")}
-              className={`flex items-center space-x-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
+              className={`flex items-center space-x-2 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
                 activeTab === "analytics"
                   ? "bg-[var(--color-panel)] text-blue-600 dark:text-blue-400 shadow-xs border border-[var(--color-border)]"
                   : "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
               }`}
             >
               <BarChart3 className="h-3.5 w-3.5" />
-              <span>Activity & Response Rates</span>
+              <span>Intelligence & ROI</span>
             </button>
           </nav>
 
-          {/* Right Controls: Theme Toggle & Reset */}
+          {/* Right Controls: User Badge, Theme Toggle & Reset */}
           <div className="flex items-center space-x-2">
+            <div className="hidden sm:flex items-center space-x-2 px-2.5 py-1 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-xs font-mono">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="font-semibold text-[var(--color-text-primary)]">Zeid</span>
+              <span className="text-[10px] text-[var(--color-text-muted)]">(Admin)</span>
+            </div>
+
             <button
               onClick={onResetDemo}
-              title="Reset to default demo data"
+              title="Reset state"
               className="inline-flex items-center space-x-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] px-2.5 py-1.5 text-xs font-medium text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
             >
               <RotateCcw className="h-3.5 w-3.5" />
@@ -198,7 +210,7 @@ export function Navbar({
                 : "text-[var(--color-text-muted)]"
             }`}
           >
-            Outreach ({pendingApprovalsCount})
+            Queue ({pendingApprovalsCount})
           </button>
           <button
             onClick={() => handleTabClick("compliance")}
@@ -208,7 +220,7 @@ export function Navbar({
                 : "text-[var(--color-text-muted)]"
             }`}
           >
-            API Compliance
+            Governance
           </button>
           <button
             onClick={() => handleTabClick("analytics")}
