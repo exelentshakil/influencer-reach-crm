@@ -137,7 +137,7 @@ export default function HomePage() {
       />
 
       {/* Main Workspace Body */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {activeTab === "pipeline" && (
           <InfluencerCrmPipeline
             creators={brandCreators}
@@ -188,31 +188,31 @@ export default function HomePage() {
                             className="h-10 w-10 rounded-lg object-cover border border-[var(--color-border)] shrink-0"
                           />
                           <div className="min-w-0">
-                            <h4 className="text-xs font-semibold text-[var(--color-text-primary)] truncate">
+                            <h4 className="text-sm font-semibold text-[var(--color-text-primary)] truncate">
                               {c.name}
                             </h4>
-                            <p className="text-[10.5px] text-[var(--color-text-muted)] font-mono truncate">
+                            <p className="text-xs text-[var(--color-text-muted)] font-mono truncate">
                               {c.handle} • {c.platform}
                             </p>
                           </div>
                         </div>
-                        <span className={cn("px-2 py-0.5 rounded text-[9.5px] font-mono font-medium border shrink-0", stage.badgeClass)}>
+                        <span className={cn("px-2.5 py-0.5 rounded text-xs font-mono font-semibold border shrink-0", stage.badgeClass)}>
                           {stage.label}
                         </span>
                       </div>
 
-                      <div className="text-[11.5px] text-[var(--color-text-secondary)] bg-[var(--color-panel-subtle)] p-2.5 rounded-lg border border-[var(--color-border)] line-clamp-2 leading-relaxed">
+                      <div className="text-xs sm:text-[13px] text-[var(--color-text-secondary)] bg-[var(--color-panel-subtle)] p-3 rounded-lg border border-[var(--color-border)] line-clamp-2 leading-relaxed">
                         &ldquo;{c.outreachDraft.message}&rdquo;
                       </div>
 
-                      <div className="flex items-center justify-between text-[10.5px] font-mono text-[var(--color-text-muted)] pt-0.5">
-                        <span className="flex items-center gap-1.5">
-                          <span className={cn("h-1.5 w-1.5 rounded-full shrink-0", stage.dotColor)} />
+                      <div className="flex items-center justify-between text-xs font-mono text-[var(--color-text-muted)] pt-0.5">
+                        <span className="flex items-center gap-1.5 font-medium">
+                          <span className={cn("h-2 w-2 rounded-full shrink-0", stage.dotColor)} />
                           <span>Status: {c.outreachDraft.status}</span>
                         </span>
-                        <span className="text-[var(--color-brand-primary)] font-medium flex items-center gap-1 group-hover:underline">
+                        <span className="text-[var(--color-brand-primary)] font-semibold flex items-center gap-1 group-hover:underline">
                           <span>Review Draft</span>
-                          <ArrowRight className="h-3 w-3" />
+                          <ArrowRight className="h-3.5 w-3.5" />
                         </span>
                       </div>
                     </div>

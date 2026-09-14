@@ -58,11 +58,11 @@ export function Navbar({
                 <span className="text-sm font-semibold tracking-tight text-[var(--color-text-primary)]">
                   ReachVault
                 </span>
-                <span className="rounded-md bg-[var(--color-brand-subtle)] border border-[var(--color-brand-primary)]/20 px-1.5 py-0.2 text-[9.5px] font-semibold text-[var(--color-brand-primary)] font-mono">
+                <span className="rounded-md bg-[var(--color-brand-subtle)] border border-[var(--color-brand-primary)]/20 px-1.5 py-0.2 text-xs font-semibold text-[var(--color-brand-primary)] font-mono">
                   Enterprise
                 </span>
               </div>
-              <p className="hidden sm:block text-[10px] text-[var(--color-text-muted)] font-medium">
+              <p className="hidden sm:block text-xs text-[var(--color-text-muted)] font-medium">
                 Creator Operations &amp; Compliance
               </p>
             </div>
@@ -107,7 +107,7 @@ export function Navbar({
                 }`}
               />
               <span className="whitespace-nowrap">Pipeline</span>
-              <span className="rounded-md bg-[var(--color-panel-subtle)] dark:bg-slate-800/80 text-[var(--color-text-secondary)] border border-[var(--color-border)] px-1.5 py-0.2 text-[10px] font-mono tabular-nums font-semibold">
+              <span className="rounded-md bg-[var(--color-panel-subtle)] dark:bg-slate-800/80 text-[var(--color-text-secondary)] border border-[var(--color-border)] px-1.5 py-0.2 text-xs font-mono tabular-nums font-semibold">
                 {totalCreatorsCount}
               </span>
             </button>
@@ -130,12 +130,12 @@ export function Navbar({
               />
               <span className="whitespace-nowrap">Review Queue</span>
               {pendingApprovalsCount > 0 ? (
-                <span className="rounded-md bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/25 px-1.5 py-0.2 text-[10px] font-mono font-semibold flex items-center gap-1 tabular-nums">
+                <span className="rounded-md bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/25 px-1.5 py-0.2 text-xs font-mono font-semibold flex items-center gap-1 tabular-nums">
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
                   {pendingApprovalsCount}
                 </span>
               ) : (
-                <span className="rounded-md bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 px-1.5 py-0.2 text-[10px] font-mono font-semibold">
+                <span className="rounded-md bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 px-1.5 py-0.2 text-xs font-mono font-semibold">
                   Clear
                 </span>
               )}
@@ -158,7 +158,7 @@ export function Navbar({
                 }`}
               />
               <span className="whitespace-nowrap">API Governance</span>
-              <span className="rounded-md bg-emerald-500/10 border border-emerald-500/25 px-1.5 py-0.2 text-[9px] text-emerald-700 dark:text-emerald-400 font-mono font-semibold">
+              <span className="rounded-md bg-emerald-500/10 border border-emerald-500/25 px-1.5 py-0.2 text-xs text-emerald-700 dark:text-emerald-400 font-mono font-semibold">
                 v20.0
               </span>
             </button>
@@ -188,7 +188,7 @@ export function Navbar({
             <div className="hidden sm:flex items-center space-x-2 px-2.5 py-1 rounded-md bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-xs font-mono shrink-0">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
               <span className="font-semibold text-[var(--color-text-primary)]">Zeid</span>
-              <span className="text-[10px] text-[var(--color-text-muted)]">(Admin)</span>
+              <span className="text-xs text-[var(--color-text-muted)]">(Admin)</span>
             </div>
 
             <button

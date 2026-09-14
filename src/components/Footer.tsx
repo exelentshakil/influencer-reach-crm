@@ -14,16 +14,16 @@ import {
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--color-border)] bg-[var(--color-panel-subtle)] py-8 px-4 sm:px-6 mt-12">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <footer className="border-t border-[var(--color-border)] bg-[var(--color-panel-subtle)] py-8 mt-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         {/* Enterprise Security & Compliance Architecture */}
         <div className="space-y-3.5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[var(--color-border)] pb-3">
             <div>
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-brand-primary)] font-mono">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-brand-primary)] font-mono">
                 Enterprise Infrastructure & Policy Governance
               </span>
-              <h3 className="text-xs font-semibold text-[var(--color-text-primary)] tracking-tight">
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)] tracking-tight">
                 Architectural Safety & Platform Guardrails
               </h3>
             </div>
@@ -46,7 +46,7 @@ export function Footer() {
               <h4 className="text-xs font-semibold text-[var(--color-text-primary)]">
                 Meta Graph API v20.0
               </h4>
-              <p className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed">
+              <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
                 Queries public creator metrics and media nodes via official Business Discovery endpoints. Zero browser cookie scraping.
               </p>
             </div>
@@ -58,7 +58,7 @@ export function Footer() {
               <h4 className="text-xs font-semibold text-[var(--color-text-primary)]">
                 Human-in-the-Loop Gate
               </h4>
-              <p className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed">
+              <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
                 AI drafts personalized icebreakers grounded in real posts, but strictly enforces 1-click human approval before dispatch.
               </p>
             </div>
@@ -70,7 +70,7 @@ export function Footer() {
               <h4 className="text-xs font-semibold text-[var(--color-text-primary)]">
                 Multi-Brand Token Vault
               </h4>
-              <p className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed">
+              <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
                 Complete isolation between brand profiles with AES-256 encrypted credential storage and independent rate limit monitors.
               </p>
             </div>
@@ -82,7 +82,7 @@ export function Footer() {
               <h4 className="text-xs font-semibold text-[var(--color-text-primary)]">
                 Deterministic Audit Logs
               </h4>
-              <p className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed">
+              <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
                 Structured verification endpoints expose full policy audit checks, SLA reminder queues, and platform health telemetry.
               </p>
             </div>
@@ -97,9 +97,9 @@ export function Footer() {
               <span>All Systems Operational</span>
             </span>
             <span>•</span>
-            <span className="font-mono text-[10.5px] text-[var(--color-text-muted)]">SOC2 Type II Architecture</span>
+            <span className="font-mono text-xs text-[var(--color-text-muted)]">SOC2 Type II Architecture</span>
             <span>•</span>
-            <span className="font-mono text-[10.5px] text-[var(--color-text-muted)]">99.99% Uptime SLA</span>
+            <span className="font-mono text-xs text-[var(--color-text-muted)]">99.99% Uptime SLA</span>
           </div>
 
           <div className="flex items-center gap-2">
@@ -136,7 +136,7 @@ export function Footer() {
             <span>Enterprise Influencer Operations & Compliance CRM</span>
           </div>
 
-          <div className="text-[10.5px] font-mono">
+          <div className="text-xs font-mono">
             Powered by BarakahSoft LLC • Meta Tech Provider & TikTok for Business Ecosystem
           </div>
         </div>

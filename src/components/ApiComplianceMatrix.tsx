@@ -67,41 +67,41 @@ export function ApiComplianceMatrix() {
 
         {/* 3 Pillars of Safety */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
-          <div className="p-3.5 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] space-y-1 shadow-2xs">
-            <div className="flex items-center space-x-1.5 text-xs font-semibold text-pink-700 dark:text-pink-400">
-              <Instagram className="h-3.5 w-3.5" />
+          <div className="p-4 rounded-xl bg-[var(--color-panel-subtle)] border border-[var(--color-border)] space-y-1.5 shadow-2xs">
+            <div className="flex items-center space-x-2 text-xs sm:text-sm font-semibold text-pink-700 dark:text-pink-400">
+              <Instagram className="h-4 w-4" />
               <span>Meta Graph API v20.0</span>
             </div>
-            <p className="text-xs text-[var(--color-text-primary)] font-medium">
+            <p className="text-xs sm:text-sm text-[var(--color-text-primary)] font-semibold">
               Business Discovery Endpoint
             </p>
-            <p className="text-[11px] text-[var(--color-text-muted)] leading-relaxed">
+            <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
               Official queries to public business/creator IG nodes via verified Facebook App Token. Zero reverse-engineered session cookies.
             </p>
           </div>
 
-          <div className="p-3.5 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] space-y-1 shadow-2xs">
-            <div className="flex items-center space-x-1.5 text-xs font-semibold text-cyan-700 dark:text-cyan-400">
-              <Video className="h-3.5 w-3.5" />
+          <div className="p-4 rounded-xl bg-[var(--color-panel-subtle)] border border-[var(--color-border)] space-y-1.5 shadow-2xs">
+            <div className="flex items-center space-x-2 text-xs sm:text-sm font-semibold text-cyan-700 dark:text-cyan-400">
+              <Video className="h-4 w-4" />
               <span>TikTok for Business API</span>
             </div>
-            <p className="text-xs text-[var(--color-text-primary)] font-medium">
+            <p className="text-xs sm:text-sm text-[var(--color-text-primary)] font-semibold">
               Creator Marketplace & Content API
             </p>
-            <p className="text-[11px] text-[var(--color-text-muted)] leading-relaxed">
+            <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
               Legitimate developer app OAuth tokens querying verified creator information and public video performance.
             </p>
           </div>
 
-          <div className="p-3.5 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] space-y-1 shadow-2xs">
-            <div className="flex items-center space-x-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-              <Lock className="h-3.5 w-3.5" />
+          <div className="p-4 rounded-xl bg-[var(--color-panel-subtle)] border border-[var(--color-border)] space-y-1.5 shadow-2xs">
+            <div className="flex items-center space-x-2 text-xs sm:text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+              <Lock className="h-4 w-4" />
               <span>Human-in-the-Loop Gate</span>
             </div>
-            <p className="text-xs text-[var(--color-text-primary)] font-medium">
+            <p className="text-xs sm:text-sm text-[var(--color-text-primary)] font-semibold">
               100% Policy-Safe Outreach
             </p>
-            <p className="text-[11px] text-[var(--color-text-muted)] leading-relaxed">
+            <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
               Prohibits unsupervised bot spam DMs. AI writes personalized drafts; team member confirms and approves before any message is sent.
             </p>
           </div>
@@ -121,16 +121,16 @@ export function ApiComplianceMatrix() {
           </div>
 
           {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-0.5 bg-[var(--color-panel-subtle)] p-0.5 rounded-md border border-[var(--color-border)]">
+          <div className="flex flex-wrap items-center gap-1 bg-[var(--color-panel-subtle)] p-1 rounded-lg border border-[var(--color-border)]">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
                 className={cn(
-                  "px-2.5 py-1 text-[11px] font-medium rounded-sm transition-all",
+                  "px-3 py-1.5 text-xs font-semibold rounded-md transition-all",
                   selectedCategory === cat.id
-                    ? "bg-[var(--color-panel)] text-[var(--color-text-primary)] shadow-2xs border border-[var(--color-border)] font-semibold"
-                    : "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
+                    ? "bg-[var(--color-panel)] text-[var(--color-text-primary)] shadow-2xs border border-[var(--color-border)]"
+                    : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                 )}
               >
                 {cat.label}
@@ -152,12 +152,12 @@ export function ApiComplianceMatrix() {
                   >
                     <div className="space-y-1 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-xs font-semibold text-[var(--color-text-primary)]">
+                        <span className="text-sm font-semibold text-[var(--color-text-primary)]">
                           {rule.featureName}
                         </span>
                         <span
                           className={cn(
-                            "px-2 py-0.2 rounded text-[10px] font-medium font-mono border",
+                            "px-2.5 py-0.5 rounded-md text-xs font-semibold font-mono border",
                             rule.officialSupport === "NATIVE_OFFICIAL_API"
                               ? "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/60"
                               : "bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-800/60"
@@ -167,11 +167,11 @@ export function ApiComplianceMatrix() {
                             ? "✓ Native Official API"
                             : "⚠️ Human-in-the-Loop Gateway"}
                         </span>
-                        <span className="text-[9.5px] text-[var(--color-text-muted)] font-mono uppercase bg-[var(--color-panel-subtle)] px-1.5 py-0.2 rounded border border-[var(--color-border)]">
+                        <span className="text-xs text-[var(--color-text-secondary)] font-mono uppercase bg-[var(--color-panel-subtle)] px-2 py-0.5 rounded border border-[var(--color-border)] font-medium">
                           {rule.category}
                         </span>
                       </div>
-                      <p className="text-xs text-[var(--color-text-secondary)]">
+                      <p className="text-xs sm:text-[13px] text-[var(--color-text-secondary)] leading-relaxed">
                         {rule.safeImplementation}
                       </p>
                     </div>
@@ -186,34 +186,34 @@ export function ApiComplianceMatrix() {
                     <div className="px-3.5 sm:px-4 pb-4 pt-1 bg-[var(--color-panel-subtle)]/60 border-t border-[var(--color-border-subtle)] space-y-3 text-xs">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {/* Meta Endpoint */}
-                        <div className="p-2.5 rounded-lg bg-[var(--color-panel)] border border-[var(--color-border)] space-y-1">
-                          <div className="flex items-center space-x-1 text-pink-700 dark:text-pink-400 font-semibold font-mono text-[10.5px]">
-                            <Instagram className="h-3 w-3" />
+                        <div className="p-3 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] space-y-1.5">
+                          <div className="flex items-center space-x-1.5 text-pink-700 dark:text-pink-400 font-semibold font-mono text-xs">
+                            <Instagram className="h-3.5 w-3.5" />
                             <span>Meta Graph API Endpoint</span>
                           </div>
-                          <code className="text-[10.5px] font-mono text-[var(--color-text-primary)] block bg-[var(--color-panel-subtle)] p-2 rounded break-all border border-[var(--color-border)]">
+                          <code className="text-xs font-mono text-[var(--color-text-primary)] block bg-[var(--color-panel-subtle)] p-2.5 rounded-lg break-all border border-[var(--color-border)]">
                             {rule.metaEndpoint}
                           </code>
                         </div>
 
                         {/* TikTok Endpoint */}
-                        <div className="p-2.5 rounded-lg bg-[var(--color-panel)] border border-[var(--color-border)] space-y-1">
-                          <div className="flex items-center space-x-1 text-cyan-700 dark:text-cyan-400 font-semibold font-mono text-[10.5px]">
-                            <Video className="h-3 w-3" />
+                        <div className="p-3 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] space-y-1.5">
+                          <div className="flex items-center space-x-1.5 text-cyan-700 dark:text-cyan-400 font-semibold font-mono text-xs">
+                            <Video className="h-3.5 w-3.5" />
                             <span>TikTok for Business API</span>
                           </div>
-                          <code className="text-[10.5px] font-mono text-[var(--color-text-primary)] block bg-[var(--color-panel-subtle)] p-2 rounded break-all border border-[var(--color-border)]">
+                          <code className="text-xs font-mono text-[var(--color-text-primary)] block bg-[var(--color-panel-subtle)] p-2.5 rounded-lg break-all border border-[var(--color-border)]">
                             {rule.tikTokEndpoint}
                           </code>
                         </div>
                       </div>
 
                       {/* Policy Guideline */}
-                      <div className="p-3 rounded-lg bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200/80 dark:border-blue-800/40 text-blue-950 dark:text-blue-200 space-y-1">
-                        <span className="font-semibold text-[10.5px] uppercase font-mono block">
+                      <div className="p-3.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200/80 dark:border-blue-800/40 text-blue-950 dark:text-blue-200 space-y-1.5">
+                        <span className="font-semibold text-xs uppercase font-mono block">
                           Official Platform Policy Rule:
                         </span>
-                        <p className="text-[11.5px] leading-relaxed text-[var(--color-text-secondary)]">
+                        <p className="text-xs sm:text-[13px] leading-relaxed text-[var(--color-text-secondary)]">
                           {rule.policyGuideline}
                         </p>
                       </div>

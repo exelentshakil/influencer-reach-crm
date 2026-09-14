@@ -101,7 +101,7 @@ export function OutreachComposerDrawer({
               />
               <span
                 className={cn(
-                  "absolute -bottom-1 -right-1 p-0.5 rounded-full border border-[var(--color-panel)] text-white text-[9px]",
+                  "absolute -bottom-1 -right-1 p-0.5 rounded-full border border-[var(--color-panel)] text-white text-xs",
                   creator.platform === "INSTAGRAM" ? "bg-pink-600" : "bg-cyan-600"
                 )}
               >
@@ -121,10 +121,10 @@ export function OutreachComposerDrawer({
                   {creator.handle}
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-[11px] text-[var(--color-text-muted)] font-mono mt-0.5">
-                <span>{formatCompactNumber(creator.followers)} followers</span>
+              <div className="flex items-center gap-2 text-xs text-[var(--color-text-muted)] font-mono mt-1">
+                <span className="text-[var(--color-text-secondary)] font-medium">{formatCompactNumber(creator.followers)} followers</span>
                 <span>•</span>
-                <span className="text-emerald-700 dark:text-emerald-400 font-medium">
+                <span className="text-emerald-700 dark:text-emerald-400 font-semibold">
                   {creator.engagementRate}% engagement
                 </span>
                 <span>•</span>
@@ -134,7 +134,7 @@ export function OutreachComposerDrawer({
           </div>
 
           <div className="flex items-center space-x-2 shrink-0">
-            <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-emerald-800 dark:text-emerald-300 text-[11px] font-semibold">
+            <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-emerald-800 dark:text-emerald-300 text-xs font-semibold">
               <ShieldCheck className="h-3.5 w-3.5" />
               <span>Human Gate Active</span>
             </div>
@@ -162,9 +162,9 @@ export function OutreachComposerDrawer({
           {/* Section 1: Audited Public Content (Official API Discovery) */}
           <div className="border border-[var(--color-border)] rounded-xl bg-[var(--color-panel-subtle)] p-3.5 space-y-2.5">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                <h3 className="text-[10.5px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+              <div className="flex items-center space-x-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
                   Official API Content Discovery (No Scrapers)
                 </h3>
               </div>
@@ -172,27 +172,27 @@ export function OutreachComposerDrawer({
                 href={creator.recentPost.postUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1 text-[11px] text-[var(--color-brand-primary)] hover:underline font-mono"
+                className="inline-flex items-center gap-1 text-xs text-[var(--color-brand-primary)] hover:underline font-mono font-semibold"
               >
                 <span>View on {creator.platform === "INSTAGRAM" ? "Instagram" : "TikTok"}</span>
-                <ExternalLink className="h-2.5 w-2.5" />
+                <ExternalLink className="h-3 w-3" />
               </a>
             </div>
 
             <div className="p-3 rounded-lg bg-[var(--color-panel)] border border-[var(--color-border)] space-y-2 shadow-2xs">
-              <div className="flex items-center justify-between text-[10.5px] font-mono text-[var(--color-text-muted)]">
-                <span className="px-1.5 py-0.2 rounded bg-[var(--color-panel-subtle)] text-[var(--color-text-primary)] font-semibold border border-[var(--color-border)]">
+              <div className="flex items-center justify-between text-xs font-mono text-[var(--color-text-muted)]">
+                <span className="px-2 py-0.5 rounded bg-[var(--color-panel-subtle)] text-[var(--color-text-primary)] font-semibold border border-[var(--color-border)]">
                   {creator.recentPost.mediaType}
                 </span>
                 <span>Published: {creator.recentPost.date}</span>
-                <span className="text-emerald-700 dark:text-emerald-400 font-medium">
+                <span className="text-emerald-700 dark:text-emerald-400 font-semibold">
                   {creator.recentPost.likes.toLocaleString()} likes • {creator.recentPost.comments.toLocaleString()} comments
                 </span>
               </div>
-              <p className="text-xs text-[var(--color-text-primary)] leading-relaxed italic border-l-2 border-[var(--color-brand-primary)] pl-2.5">
+              <p className="text-sm text-[var(--color-text-primary)] leading-relaxed italic border-l-2 border-[var(--color-brand-primary)] pl-3">
                 &ldquo;{creator.recentPost.caption}&rdquo;
               </p>
-              <div className="text-[11px] text-[var(--color-text-secondary)] bg-[var(--color-panel-subtle)] p-2 rounded-md border border-[var(--color-border)]">
+              <div className="text-xs sm:text-[13px] text-[var(--color-text-secondary)] bg-[var(--color-panel-subtle)] p-2.5 rounded-lg border border-[var(--color-border)] leading-relaxed">
                 <span className="font-semibold text-[var(--color-brand-primary)]">
                   AI Context Hook:
                 </span>{" "}
@@ -209,21 +209,21 @@ export function OutreachComposerDrawer({
                   <Sparkles className="h-3.5 w-3.5 text-[var(--color-brand-primary)]" />
                   <span>Personalized Outreach Draft</span>
                 </h3>
-                <p className="text-[11px] text-[var(--color-text-muted)]">
+                <p className="text-xs text-[var(--color-text-muted)]">
                   Context-grounded in verified public content. Review and edit before sending.
                 </p>
               </div>
 
               {/* Tone Quick Presets */}
-              <div className="flex items-center gap-0.5 bg-[var(--color-panel-subtle)] p-0.5 rounded-md border border-[var(--color-border)]">
+              <div className="flex items-center gap-1 bg-[var(--color-panel-subtle)] p-1 rounded-lg border border-[var(--color-border)]">
                 <button
                   type="button"
                   onClick={() => handleApplyTone("CASUAL")}
                   className={cn(
-                    "px-2 py-1 text-[10.5px] font-medium rounded-sm transition-all",
+                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
                     toneSelected === "CASUAL"
                       ? "bg-[var(--color-panel)] text-[var(--color-text-primary)] shadow-2xs border border-[var(--color-border)]"
-                      : "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
+                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                   )}
                 >
                   Casual
@@ -232,10 +232,10 @@ export function OutreachComposerDrawer({
                   type="button"
                   onClick={() => handleApplyTone("FOUNDER")}
                   className={cn(
-                    "px-2 py-1 text-[10.5px] font-medium rounded-sm transition-all",
+                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
                     toneSelected === "FOUNDER"
                       ? "bg-[var(--color-panel)] text-[var(--color-text-primary)] shadow-2xs border border-[var(--color-border)]"
-                      : "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
+                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                   )}
                 >
                   Founder
@@ -244,10 +244,10 @@ export function OutreachComposerDrawer({
                   type="button"
                   onClick={() => handleApplyTone("SEEDING")}
                   className={cn(
-                    "px-2 py-1 text-[10.5px] font-medium rounded-sm transition-all",
+                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
                     toneSelected === "SEEDING"
                       ? "bg-[var(--color-panel)] text-[var(--color-text-primary)] shadow-2xs border border-[var(--color-border)]"
-                      : "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
+                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                   )}
                 >
                   VIP Seeding
@@ -257,7 +257,7 @@ export function OutreachComposerDrawer({
 
             {/* Subject Field */}
             <div>
-              <label className="text-[10.5px] font-semibold uppercase text-[var(--color-text-muted)] block mb-1">
+              <label className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)] block mb-1.5">
                 Message Subject / Hook
               </label>
               <input
@@ -265,29 +265,29 @@ export function OutreachComposerDrawer({
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 placeholder="Collaboration with Bearvana..."
-                className="w-full px-3 py-1.5 text-xs rounded-md bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand-primary)] focus:ring-1 focus:ring-[var(--color-brand-primary)] transition-all"
+                className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-brand-primary)] focus:ring-1 focus:ring-[var(--color-brand-primary)] font-medium transition-all"
               />
             </div>
 
             {/* Message Body */}
             <div>
-              <div className="flex items-center justify-between mb-1">
-                <label className="text-[10.5px] font-semibold uppercase text-[var(--color-text-muted)]">
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
                   Message Content (Editable)
                 </label>
                 <button
                   type="button"
                   onClick={handleCopyMessage}
-                  className="inline-flex items-center gap-1 text-[11px] text-[var(--color-brand-primary)] hover:underline font-medium"
+                  className="inline-flex items-center gap-1 text-xs text-[var(--color-brand-primary)] hover:underline font-semibold"
                 >
                   {copied ? (
                     <>
-                      <Check className="h-3 w-3 text-emerald-600" />
+                      <Check className="h-3.5 w-3.5 text-emerald-600" />
                       <span>Copied</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="h-3 w-3" />
+                      <Copy className="h-3.5 w-3.5" />
                       <span>Copy Text</span>
                     </>
                   )}
@@ -297,17 +297,17 @@ export function OutreachComposerDrawer({
                 rows={7}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full p-3 text-xs rounded-md bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-[var(--color-text-primary)] leading-relaxed focus:outline-none focus:border-[var(--color-brand-primary)] focus:ring-1 focus:ring-[var(--color-brand-primary)] font-sans transition-all"
+                className="w-full p-3.5 text-sm rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-[var(--color-text-primary)] leading-relaxed focus:outline-none focus:border-[var(--color-brand-primary)] focus:ring-1 focus:ring-[var(--color-brand-primary)] font-sans transition-all"
               />
             </div>
 
             {/* Compliance Verification Badge Checklist */}
-            <div className="border border-[var(--color-border)] rounded-lg bg-[var(--color-panel-subtle)] p-3 space-y-2">
-              <h4 className="text-[10.5px] font-semibold uppercase text-[var(--color-text-muted)] flex items-center gap-1.5">
-                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+            <div className="border border-[var(--color-border)] rounded-xl bg-[var(--color-panel-subtle)] p-3.5 space-y-2.5">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)] flex items-center gap-1.5">
+                <ShieldCheck className="h-4 w-4 text-emerald-600" />
                 <span>Zero-Risk Compliance Guardrails</span>
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-[var(--color-text-secondary)]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[var(--color-text-secondary)]">
                 <div className="flex items-center space-x-1.5">
                   <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
                   <span>No headless scraper bot employed</span>
@@ -328,15 +328,15 @@ export function OutreachComposerDrawer({
             </div>
 
             {/* Assign Approver & SLA Reminder */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
               <div>
-                <label className="text-[10.5px] font-semibold uppercase text-[var(--color-text-muted)] block mb-1">
+                <label className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)] block mb-1.5">
                   Designated Reviewer
                 </label>
                 <select
                   value={assignedApprover}
                   onChange={(e) => setAssignedApprover(e.target.value)}
-                  className="w-full text-xs rounded-md bg-[var(--color-panel-subtle)] border border-[var(--color-border)] py-1.5 px-2.5 text-[var(--color-text-primary)] outline-none"
+                  className="w-full text-xs sm:text-sm font-semibold rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] py-2 px-3 text-[var(--color-text-primary)] outline-none"
                 >
                   {TEAM_MEMBERS.map((member) => (
                     <option key={member} value={member}>
@@ -347,11 +347,11 @@ export function OutreachComposerDrawer({
               </div>
 
               <div>
-                <label className="text-[10.5px] font-semibold uppercase text-[var(--color-text-muted)] block mb-1">
+                <label className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)] block mb-1.5">
                   SLA Follow-up Window
                 </label>
-                <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-xs text-[var(--color-text-primary)] font-mono">
-                  <Clock className="h-3 w-3 text-amber-500" />
+                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-xs sm:text-sm text-[var(--color-text-primary)] font-mono font-medium">
+                  <Clock className="h-3.5 w-3.5 text-amber-500" />
                   <span>48 Hours (Auto-Remind Sep 16)</span>
                 </div>
               </div>
@@ -360,31 +360,31 @@ export function OutreachComposerDrawer({
         </div>
 
         {/* Drawer Footer Actions */}
-        <div className="p-4 sm:p-5 border-t border-[var(--color-border)] bg-[var(--color-panel)] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+        <div className="p-4 sm:p-5 border-t border-[var(--color-border)] bg-[var(--color-panel)] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
           <button
             type="button"
             onClick={handleSaveOnly}
-            className="px-3.5 py-2 text-xs font-medium rounded-md border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)] transition-colors text-center"
+            className="px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)] transition-colors text-center"
           >
             Save Draft Only
           </button>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <button
               type="button"
               onClick={handleCopyMessage}
-              className="px-3 py-2 text-xs font-medium rounded-md border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-panel-subtle)] transition-colors flex items-center justify-center gap-1.5"
+              className="px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-panel-subtle)] transition-colors flex items-center justify-center gap-1.5"
             >
-              <Copy className="h-3 w-3" />
+              <Copy className="h-3.5 w-3.5" />
               <span>{copied ? "Copied" : "Copy"}</span>
             </button>
 
             <button
               type="button"
               onClick={handleApprove}
-              className="flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-hover)] text-white shadow-2xs transition-colors flex items-center justify-center gap-1.5"
+              className="flex-1 sm:flex-none px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-hover)] text-white shadow-2xs transition-colors flex items-center justify-center gap-2"
             >
-              <CheckCircle2 className="h-3.5 w-3.5" />
+              <CheckCircle2 className="h-4 w-4" />
               <span>1-Click Human Approve & Dispatch</span>
             </button>
           </div>

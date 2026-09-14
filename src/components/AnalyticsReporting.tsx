@@ -82,75 +82,75 @@ export function AnalyticsReporting({ creators }: AnalyticsReportingProps) {
       </div>
 
       {/* 4 Core KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
         {/* Total Reach */}
-        <div className="p-4 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-1.5">
+        <div className="p-4 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-[10.5px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
               Total Creator Reach
             </span>
             <span className="p-1.5 rounded-md bg-[var(--color-brand-subtle)] text-[var(--color-brand-primary)]">
-              <Eye className="h-3.5 w-3.5" />
+              <Eye className="h-4 w-4" />
             </span>
           </div>
-          <div className="text-xl font-semibold text-[var(--color-text-primary)] font-mono tabular-nums">
+          <div className="text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)] font-mono tabular-nums tracking-tight">
             {formatCompactNumber(totalFollowers)}
           </div>
-          <p className="text-[11px] text-[var(--color-text-muted)]">
+          <p className="text-xs text-[var(--color-text-muted)] font-medium">
             Across {total} verified target creators
           </p>
         </div>
 
         {/* Outreach Response Rate */}
-        <div className="p-4 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-1.5">
+        <div className="p-4 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-[10.5px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
               Response Rate
             </span>
             <span className="p-1.5 rounded-md bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">
-              <TrendingUp className="h-3.5 w-3.5" />
+              <TrendingUp className="h-4 w-4" />
             </span>
           </div>
-          <div className="text-xl font-semibold text-emerald-700 dark:text-emerald-400 font-mono tabular-nums">
+          <div className="text-2xl sm:text-3xl font-bold text-emerald-700 dark:text-emerald-400 font-mono tabular-nums tracking-tight">
             {responseRate}%
           </div>
-          <p className="text-[11px] text-[var(--color-text-muted)]">
+          <p className="text-xs text-[var(--color-text-muted)] font-medium">
             {responding} of {sent} dispatched outreaches replied
           </p>
         </div>
 
         {/* Human Review Gate Rate */}
-        <div className="p-4 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-1.5">
+        <div className="p-4 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-[10.5px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
               Human Review Rate
             </span>
             <span className="p-1.5 rounded-md bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-400">
-              <CheckCircle2 className="h-3.5 w-3.5" />
+              <CheckCircle2 className="h-4 w-4" />
             </span>
           </div>
-          <div className="text-xl font-semibold text-[var(--color-text-primary)] font-mono tabular-nums">
+          <div className="text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)] font-mono tabular-nums tracking-tight">
             100%
           </div>
-          <p className="text-[11px] text-[var(--color-text-muted)]">
+          <p className="text-xs text-[var(--color-text-muted)] font-medium">
             0 automated bot messages dispatched
           </p>
         </div>
 
         {/* Average Follow-up SLA */}
-        <div className="p-4 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-1.5">
+        <div className="p-4 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-[10.5px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
               Follow-up SLA
             </span>
             <span className="p-1.5 rounded-md bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400">
-              <Clock className="h-3.5 w-3.5" />
+              <Clock className="h-4 w-4" />
             </span>
           </div>
-          <div className="text-xl font-semibold text-amber-700 dark:text-amber-400 font-mono tabular-nums">
+          <div className="text-2xl sm:text-3xl font-bold text-amber-700 dark:text-amber-400 font-mono tabular-nums tracking-tight">
             48 Hours
           </div>
-          <p className="text-[11px] text-[var(--color-text-muted)]">
+          <p className="text-xs text-[var(--color-text-muted)] font-medium">
             Automated calendar reminders active
           </p>
         </div>
@@ -172,19 +172,19 @@ export function AnalyticsReporting({ creators }: AnalyticsReportingProps) {
                 key={stage}
                 className="p-3 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] space-y-1.5"
               >
-                <span className="text-[10.5px] font-semibold text-[var(--color-text-muted)] block truncate">
+                <span className="text-xs font-semibold text-[var(--color-text-secondary)] block truncate">
                   {config.label}
                 </span>
-                <div className="text-xl font-semibold text-[var(--color-text-primary)] font-mono tabular-nums">
+                <div className="text-2xl font-bold text-[var(--color-text-primary)] font-mono tabular-nums">
                   {count}
                 </div>
-                <div className="w-full bg-[var(--color-border)] h-1 rounded-full overflow-hidden">
+                <div className="w-full bg-[var(--color-border)] h-1.5 rounded-full overflow-hidden">
                   <div
                     className="bg-[var(--color-brand-primary)] h-full rounded-full transition-all"
                     style={{ width: `${percentage}%` }}
                   />
                 </div>
-                <span className="text-[9.5px] text-[var(--color-text-muted)] font-mono">
+                <span className="text-xs text-[var(--color-text-muted)] font-mono font-medium">
                   {percentage}% of total
                 </span>
               </div>
@@ -196,45 +196,45 @@ export function AnalyticsReporting({ creators }: AnalyticsReportingProps) {
       {/* Platform & Team Member Breakdown */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Platform Share */}
-        <div className="p-5 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-3">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+        <div className="p-5 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-3.5">
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
             Platform Distribution & Health
           </h3>
-          <div className="space-y-2.5">
-            <div className="p-3 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] flex items-center justify-between">
-              <div className="flex items-center space-x-2.5">
-                <span className="p-1.5 rounded-md bg-pink-50 dark:bg-pink-950/40 text-pink-700 dark:text-pink-400">
+          <div className="space-y-3">
+            <div className="p-3.5 rounded-xl bg-[var(--color-panel-subtle)] border border-[var(--color-border)] flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <span className="p-2 rounded-lg bg-pink-50 dark:bg-pink-950/40 text-pink-700 dark:text-pink-400">
                   <Instagram className="h-4 w-4" />
                 </span>
                 <div>
-                  <span className="font-semibold text-xs text-[var(--color-text-primary)] block">
+                  <span className="font-semibold text-sm text-[var(--color-text-primary)] block">
                     Instagram Business Discovery
                   </span>
-                  <span className="text-[10px] text-[var(--color-text-muted)] font-mono">
+                  <span className="text-xs text-[var(--color-text-muted)] font-mono">
                     API Rate Limit: 184 / 200 calls remaining (Healthy)
                   </span>
                 </div>
               </div>
-              <span className="text-sm font-semibold font-mono text-[var(--color-text-primary)] tabular-nums">
+              <span className="text-sm sm:text-base font-bold font-mono text-[var(--color-text-primary)] tabular-nums">
                 {instagramCount} Creators
               </span>
             </div>
 
-            <div className="p-3 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)] flex items-center justify-between">
-              <div className="flex items-center space-x-2.5">
-                <span className="p-1.5 rounded-md bg-cyan-50 dark:bg-cyan-950/40 text-cyan-700 dark:text-cyan-400">
+            <div className="p-3.5 rounded-xl bg-[var(--color-panel-subtle)] border border-[var(--color-border)] flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <span className="p-2 rounded-lg bg-cyan-50 dark:bg-cyan-950/40 text-cyan-700 dark:text-cyan-400">
                   <Video className="h-4 w-4" />
                 </span>
                 <div>
-                  <span className="font-semibold text-xs text-[var(--color-text-primary)] block">
+                  <span className="font-semibold text-sm text-[var(--color-text-primary)] block">
                     TikTok Creator Marketplace API
                   </span>
-                  <span className="text-[10px] text-[var(--color-text-muted)] font-mono">
+                  <span className="text-xs text-[var(--color-text-muted)] font-mono">
                     API Rate Limit: 92 / 100 calls remaining (Healthy)
                   </span>
                 </div>
               </div>
-              <span className="text-sm font-semibold font-mono text-[var(--color-text-primary)] tabular-nums">
+              <span className="text-sm sm:text-base font-bold font-mono text-[var(--color-text-primary)] tabular-nums">
                 {tiktokCount} Creators
               </span>
             </div>
@@ -242,8 +242,8 @@ export function AnalyticsReporting({ creators }: AnalyticsReportingProps) {
         </div>
 
         {/* Team Member Assignments */}
-        <div className="p-5 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-3">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+        <div className="p-5 rounded-xl bg-[var(--color-panel)] border border-[var(--color-border)] shadow-2xs space-y-3.5">
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
             Team Member SLA Assignments
           </h3>
           <div className="divide-y divide-[var(--color-border-subtle)]">
@@ -252,13 +252,13 @@ export function AnalyticsReporting({ creators }: AnalyticsReportingProps) {
               return (
                 <div key={member} className="py-2.5 flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                    <span className="text-xs font-medium text-[var(--color-text-primary)]">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                    <span className="text-xs sm:text-sm font-semibold text-[var(--color-text-primary)]">
                       {member}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2 text-xs font-mono">
-                    <span className="px-2 py-0.5 rounded-md bg-[var(--color-panel-subtle)] text-[var(--color-text-muted)] font-medium border border-[var(--color-border)] text-[10.5px]">
+                    <span className="px-2.5 py-0.5 rounded-md bg-[var(--color-panel-subtle)] text-[var(--color-text-secondary)] font-semibold border border-[var(--color-border)]">
                       {assignedCount} creators
                     </span>
                   </div>
