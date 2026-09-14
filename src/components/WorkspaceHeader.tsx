@@ -117,7 +117,10 @@ export function WorkspaceHeader({
             </div>
             <div className="flex items-baseline gap-2 pt-0.5">
               <span className="text-2xl sm:text-3xl font-bold text-amber-700 dark:text-amber-400 font-mono tabular-nums tracking-tight">
-                {pendingApprovals} Pending
+                {pendingApprovals}
+              </span>
+              <span className="text-xs font-semibold font-mono px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60">
+                Pending
               </span>
             </div>
             <p className="text-xs text-[var(--color-text-muted)] font-medium">
@@ -133,14 +136,14 @@ export function WorkspaceHeader({
             </div>
             <div className="flex items-baseline gap-2 pt-0.5">
               <span className="text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)] font-mono tabular-nums tracking-tight">
-                {totalCreators} Creators
+                {totalCreators}
               </span>
-              <span className="text-xs text-[var(--color-brand-primary)] font-semibold font-mono">
+              <span className="text-xs text-[var(--color-brand-primary)] font-semibold font-mono px-2 py-0.5 rounded-md bg-[var(--color-brand-subtle)] border border-[var(--color-brand-primary)]/20">
                 {activeCollabs} active
               </span>
             </div>
             <p className="text-xs text-[var(--color-text-muted)] font-medium">
-              Draft to VIP fulfillment
+              Verified creators in pipeline
             </p>
           </div>
 
@@ -154,7 +157,7 @@ export function WorkspaceHeader({
               <span className="text-2xl sm:text-3xl font-bold text-emerald-700 dark:text-emerald-400 font-mono tabular-nums tracking-tight">
                 0.0%
               </span>
-              <span className="text-xs text-emerald-700 dark:text-emerald-400 font-semibold font-mono">
+              <span className="text-xs font-semibold font-mono px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60">
                 Safe
               </span>
             </div>
