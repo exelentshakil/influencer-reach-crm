@@ -218,15 +218,15 @@ export function InfluencerCrmPipeline({
       {viewMode === "TABLE" && (
         <div className="border border-[var(--color-border)] rounded-xl bg-[var(--color-panel)] overflow-hidden shadow-2xs">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs min-w-[960px]">
+            <table className="w-full text-left text-xs table-fixed min-w-[960px]">
               <thead className="bg-[var(--color-panel-subtle)] border-b border-[var(--color-border)] text-xs font-semibold text-[var(--color-text-secondary)] uppercase tracking-wider">
                 <tr>
-                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[22%] whitespace-nowrap">Creator / Channel</th>
+                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[21%] whitespace-nowrap">Creator / Channel</th>
                   <th className="py-3.5 px-3 sm:px-4 font-semibold w-[17%] whitespace-nowrap">Audience & Reach</th>
-                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[26%] whitespace-nowrap">Recent Verified Media</th>
+                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[21%] whitespace-nowrap">Recent Verified Media</th>
                   <th className="py-3.5 px-3 sm:px-4 font-semibold w-[13%] whitespace-nowrap">Pipeline Stage</th>
-                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[12%] whitespace-nowrap">Assignee & SLA</th>
-                  <th className="py-3.5 px-3 sm:px-4 text-right font-semibold w-[10%] whitespace-nowrap">Human Review Gate</th>
+                  <th className="py-3.5 px-3 sm:px-4 font-semibold w-[13%] whitespace-nowrap">Assignee & SLA</th>
+                  <th className="py-3.5 px-3 sm:px-4 text-right font-semibold w-[15%] whitespace-nowrap">Human Review Gate</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[var(--color-border-subtle)]">
@@ -294,8 +294,8 @@ export function InfluencerCrmPipeline({
                           <div className="text-xs text-emerald-700 dark:text-emerald-400 font-mono font-semibold mt-0.5">
                             {creator.engagementRate}% engagement
                           </div>
-                          <span className="inline-flex items-center gap-1.5 mt-1.5 px-2.5 py-0.5 rounded-md text-xs font-medium bg-[var(--color-panel-subtle)] text-[var(--color-text-secondary)] border border-[var(--color-border)] whitespace-nowrap">
-                            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-brand-primary)]/70 shrink-0" />
+                          <span className="inline-flex items-center gap-1.5 mt-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[var(--color-panel-subtle)] text-[var(--color-text-secondary)] border border-[var(--color-border)] whitespace-nowrap">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-brand-primary)] shrink-0" />
                             <span>{creator.niche}</span>
                           </span>
                         </td>
