@@ -15,6 +15,7 @@ import {
 } from "@/lib/types";
 import { INITIAL_BRANDS, INITIAL_INFLUENCERS } from "@/lib/constants";
 import { Sparkles, ArrowRight } from "lucide-react";
+import { cn, getStageConfig } from "@/lib/utils";
 
 export default function HomePage() {
   const [brands, setBrands] = useState<BrandProfile[]>(INITIAL_BRANDS);
@@ -170,39 +171,53 @@ export default function HomePage() {
               </div>
 
               {/* Quick Creator Selector Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
-                {brandCreators.map((c) => (
-                  <div
-                    key={c.id}
-                    onClick={() => setSelectedCreatorForComposer(c)}
-                    className="p-3.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] hover:bg-[var(--color-panel)] cursor-pointer transition-all shadow-2xs space-y-2.5 group"
-                  >
-                    <div className="flex items-center space-x-2.5">
-                      <img
-                        src={c.avatarUrl}
-                        alt={c.name}
-                        className="h-9 w-9 rounded-md object-cover border border-[var(--color-border)]"
-                      />
-                      <div className="min-w-0">
-                        <h4 className="text-xs font-semibold text-[var(--color-text-primary)] truncate">
-                          {c.name}
-                        </h4>
-                        <p className="text-[10.5px] text-[var(--color-text-muted)] font-mono">
-                          {c.handle} • {c.platform}
-                        </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-1">
+                {brandCreators.map((c) => {
+                  const stage = getStageConfig(c.pipelineStage);
+                  return (
+                    <div
+                      key={c.id}
+                      onClick={() => setSelectedCreatorForComposer(c)}
+                      className="p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-panel)] hover:border-[var(--color-brand-primary)]/40 hover:shadow-xs cursor-pointer transition-all space-y-3 group"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center space-x-2.5 min-w-0">
+                          <img
+                            src={c.avatarUrl}
+                            alt={c.name}
+                            className="h-10 w-10 rounded-lg object-cover border border-[var(--color-border)] shrink-0"
+                          />
+                          <div className="min-w-0">
+                            <h4 className="text-xs font-semibold text-[var(--color-text-primary)] truncate">
+                              {c.name}
+                            </h4>
+                            <p className="text-[10.5px] text-[var(--color-text-muted)] font-mono truncate">
+                              {c.handle} • {c.platform}
+                            </p>
+                          </div>
+                        </div>
+                        <span className={cn("px-2 py-0.5 rounded text-[9.5px] font-mono font-medium border shrink-0", stage.badgeClass)}>
+                          {stage.label}
+                        </span>
+                      </div>
+
+                      <div className="text-[11.5px] text-[var(--color-text-secondary)] bg-[var(--color-panel-subtle)] p-2.5 rounded-lg border border-[var(--color-border)] line-clamp-2 leading-relaxed">
+                        &ldquo;{c.outreachDraft.message}&rdquo;
+                      </div>
+
+                      <div className="flex items-center justify-between text-[10.5px] font-mono text-[var(--color-text-muted)] pt-0.5">
+                        <span className="flex items-center gap-1.5">
+                          <span className={cn("h-1.5 w-1.5 rounded-full shrink-0", stage.dotColor)} />
+                          <span>Status: {c.outreachDraft.status}</span>
+                        </span>
+                        <span className="text-[var(--color-brand-primary)] font-medium flex items-center gap-1 group-hover:underline">
+                          <span>Review Draft</span>
+                          <ArrowRight className="h-3 w-3" />
+                        </span>
                       </div>
                     </div>
-                    <div className="text-[11px] text-[var(--color-text-secondary)] bg-[var(--color-panel)] p-2.5 rounded-md border border-[var(--color-border)] line-clamp-2">
-                      &ldquo;{c.outreachDraft.message}&rdquo;
-                    </div>
-                    <div className="flex items-center justify-between text-[10px] font-mono text-[var(--color-text-muted)] pt-0.5">
-                      <span>Status: {c.outreachDraft.status}</span>
-                      <span className="text-[var(--color-brand-primary)] font-medium flex items-center gap-0.5 group-hover:underline">
-                        Open Review Drawer <ArrowRight className="h-2.5 w-2.5" />
-                      </span>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
