@@ -203,24 +203,24 @@ export function OutreachComposerDrawer({
 
           {/* Section 2: Human-in-the-Loop Composer */}
           <div className="space-y-3.5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+              <div className="min-w-0 flex-1">
                 <h3 className="text-xs font-semibold text-[var(--color-text-primary)] flex items-center gap-1.5">
-                  <Sparkles className="h-3.5 w-3.5 text-[var(--color-brand-primary)]" />
+                  <Sparkles className="h-3.5 w-3.5 text-[var(--color-brand-primary)] shrink-0" />
                   <span>Personalized Outreach Draft</span>
                 </h3>
-                <p className="text-xs text-[var(--color-text-muted)]">
+                <p className="text-xs text-[var(--color-text-muted)] mt-0.5">
                   Context-grounded in verified public content. Review and edit before sending.
                 </p>
               </div>
 
               {/* Tone Quick Presets */}
-              <div className="flex items-center gap-1 bg-[var(--color-panel-subtle)] p-1 rounded-lg border border-[var(--color-border)]">
+              <div className="flex items-center gap-1 bg-[var(--color-panel-subtle)] p-1 rounded-lg border border-[var(--color-border)] shrink-0 self-start sm:self-auto">
                 <button
                   type="button"
                   onClick={() => handleApplyTone("CASUAL")}
                   className={cn(
-                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
+                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all whitespace-nowrap shrink-0",
                     toneSelected === "CASUAL"
                       ? "bg-[var(--color-panel)] text-[var(--color-text-primary)] shadow-2xs border border-[var(--color-border)]"
                       : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
@@ -232,7 +232,7 @@ export function OutreachComposerDrawer({
                   type="button"
                   onClick={() => handleApplyTone("FOUNDER")}
                   className={cn(
-                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
+                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all whitespace-nowrap shrink-0",
                     toneSelected === "FOUNDER"
                       ? "bg-[var(--color-panel)] text-[var(--color-text-primary)] shadow-2xs border border-[var(--color-border)]"
                       : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
@@ -244,7 +244,7 @@ export function OutreachComposerDrawer({
                   type="button"
                   onClick={() => handleApplyTone("SEEDING")}
                   className={cn(
-                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
+                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all whitespace-nowrap shrink-0",
                     toneSelected === "SEEDING"
                       ? "bg-[var(--color-panel)] text-[var(--color-text-primary)] shadow-2xs border border-[var(--color-border)]"
                       : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
@@ -364,7 +364,7 @@ export function OutreachComposerDrawer({
           <button
             type="button"
             onClick={handleSaveOnly}
-            className="px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)] transition-colors text-center"
+            className="px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)] transition-colors text-center whitespace-nowrap shrink-0"
           >
             Save Draft Only
           </button>
@@ -373,18 +373,18 @@ export function OutreachComposerDrawer({
             <button
               type="button"
               onClick={handleCopyMessage}
-              className="px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-panel-subtle)] transition-colors flex items-center justify-center gap-1.5"
+              className="px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-panel-subtle)] transition-colors flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0"
             >
-              <Copy className="h-3.5 w-3.5" />
+              <Copy className="h-3.5 w-3.5 shrink-0" />
               <span>{copied ? "Copied" : "Copy"}</span>
             </button>
 
             <button
               type="button"
               onClick={handleApprove}
-              className="flex-1 sm:flex-none px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-hover)] text-white shadow-2xs transition-colors flex items-center justify-center gap-2"
+              className="flex-1 sm:flex-none px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-hover)] text-white shadow-2xs transition-colors flex items-center justify-center gap-2 whitespace-nowrap shrink-0"
             >
-              <CheckCircle2 className="h-4 w-4" />
+              <CheckCircle2 className="h-4 w-4 shrink-0" />
               <span>1-Click Human Approve & Dispatch</span>
             </button>
           </div>
