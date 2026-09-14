@@ -14,7 +14,7 @@ import {
   PipelineStage
 } from "@/lib/types";
 import { INITIAL_BRANDS, INITIAL_INFLUENCERS } from "@/lib/constants";
-import { Sparkles, ShieldCheck, ArrowRight } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 export default function HomePage() {
   const [brands, setBrands] = useState<BrandProfile[]>(INITIAL_BRANDS);
@@ -136,7 +136,7 @@ export default function HomePage() {
       />
 
       {/* Main Workspace Body */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6">
         {activeTab === "pipeline" && (
           <InfluencerCrmPipeline
             creators={brandCreators}
@@ -148,56 +148,56 @@ export default function HomePage() {
         )}
 
         {activeTab === "composer" && (
-          <div className="space-y-6">
-            <div className="border border-[var(--color-border)] rounded-3xl bg-[var(--color-panel)] p-6 sm:p-8 space-y-4">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-5">
+            <div className="border border-[var(--color-border)] rounded-xl bg-[var(--color-panel)] p-5 sm:p-6 space-y-4 shadow-2xs">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[var(--color-border)] pb-4">
                 <div>
-                  <h2 className="text-xl font-extrabold text-[var(--color-text-primary)] flex items-center gap-2">
-                    <Sparkles className="h-5 w-5 text-blue-600" />
+                  <h2 className="text-base sm:text-lg font-semibold text-[var(--color-text-primary)] flex items-center gap-2">
+                    <Sparkles className="h-4 w-4 text-[var(--color-brand-primary)]" />
                     <span>Human-in-the-Loop AI Outreach Composer</span>
                   </h2>
-                  <p className="text-xs sm:text-sm text-[var(--color-text-secondary)]">
+                  <p className="text-xs text-[var(--color-text-secondary)]">
                     Review and edit AI-grounded drafts. Select any creator from your pipeline to open the verification drawer.
                   </p>
                 </div>
                 <button
                   onClick={() => setActiveTab("pipeline")}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-xs transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-hover)] text-white text-xs font-medium shadow-2xs transition-colors"
                 >
                   <span>Open Pipeline View</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
+                  <ArrowRight className="h-3 w-3" />
                 </button>
               </div>
 
               {/* Quick Creator Selector Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
                 {brandCreators.map((c) => (
                   <div
                     key={c.id}
                     onClick={() => setSelectedCreatorForComposer(c)}
-                    className="p-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] hover:bg-[var(--color-panel-subtle)]/80 cursor-pointer transition-all hover:shadow-xs space-y-3"
+                    className="p-3.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] hover:bg-[var(--color-panel)] cursor-pointer transition-all shadow-2xs space-y-2.5 group"
                   >
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2.5">
                       <img
                         src={c.avatarUrl}
                         alt={c.name}
-                        className="h-10 w-10 rounded-full object-cover border border-[var(--color-border)]"
+                        className="h-9 w-9 rounded-md object-cover border border-[var(--color-border)]"
                       />
-                      <div>
-                        <h4 className="text-xs font-bold text-[var(--color-text-primary)]">
+                      <div className="min-w-0">
+                        <h4 className="text-xs font-semibold text-[var(--color-text-primary)] truncate">
                           {c.name}
                         </h4>
-                        <p className="text-[11px] text-[var(--color-text-muted)] font-mono">
+                        <p className="text-[10.5px] text-[var(--color-text-muted)] font-mono">
                           {c.handle} • {c.platform}
                         </p>
                       </div>
                     </div>
-                    <div className="text-[11px] text-[var(--color-text-secondary)] bg-[var(--color-panel)] p-2.5 rounded-xl border border-[var(--color-border)] line-clamp-2">
+                    <div className="text-[11px] text-[var(--color-text-secondary)] bg-[var(--color-panel)] p-2.5 rounded-md border border-[var(--color-border)] line-clamp-2">
                       &ldquo;{c.outreachDraft.message}&rdquo;
                     </div>
-                    <div className="flex items-center justify-between text-[10px] font-mono text-[var(--color-text-muted)] pt-1">
+                    <div className="flex items-center justify-between text-[10px] font-mono text-[var(--color-text-muted)] pt-0.5">
                       <span>Status: {c.outreachDraft.status}</span>
-                      <span className="text-blue-600 dark:text-blue-400 font-bold flex items-center gap-0.5">
+                      <span className="text-[var(--color-brand-primary)] font-medium flex items-center gap-0.5 group-hover:underline">
                         Open Review Drawer <ArrowRight className="h-2.5 w-2.5" />
                       </span>
                     </div>
