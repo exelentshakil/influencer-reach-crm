@@ -210,9 +210,9 @@ export default function HomePage() {
                           <span className={cn("h-2 w-2 rounded-full shrink-0", stage.dotColor)} />
                           <span>Status: {c.outreachDraft.status}</span>
                         </span>
-                        <span className="text-[var(--color-brand-primary)] font-semibold flex items-center gap-1 group-hover:underline">
-                          <span>Review Draft</span>
-                          <ArrowRight className="h-3.5 w-3.5" />
+                        <span className="text-[var(--color-brand-primary)] font-semibold flex items-center gap-1 group-hover:underline whitespace-nowrap shrink-0">
+                          <span className="whitespace-nowrap">Review Draft</span>
+                          <ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-0.5" />
                         </span>
                       </div>
                     </div>

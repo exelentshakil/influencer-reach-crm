@@ -218,15 +218,15 @@ export function InfluencerCrmPipeline({
       {viewMode === "TABLE" && (
         <div className="border border-[var(--color-border)] rounded-xl bg-[var(--color-panel)] overflow-hidden shadow-2xs">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
+            <table className="w-full text-left text-xs min-w-[1100px]">
               <thead className="bg-[var(--color-panel-subtle)] border-b border-[var(--color-border)] text-xs font-semibold text-[var(--color-text-secondary)] uppercase tracking-wider">
                 <tr>
-                  <th className="py-3.5 px-4 sm:px-5 font-semibold">Creator / Channel</th>
-                  <th className="py-3.5 px-4 sm:px-5 font-semibold">Audience & Reach</th>
-                  <th className="py-3.5 px-4 sm:px-5 font-semibold">Recent Verified Media</th>
-                  <th className="py-3.5 px-4 sm:px-5 font-semibold">Pipeline Stage</th>
-                  <th className="py-3.5 px-4 sm:px-5 font-semibold">Assignee & SLA</th>
-                  <th className="py-3.5 px-4 sm:px-5 text-right font-semibold">Human Review Gate</th>
+                  <th className="py-3.5 px-4 sm:px-5 font-semibold w-[260px] whitespace-nowrap">Creator / Channel</th>
+                  <th className="py-3.5 px-4 sm:px-5 font-semibold w-[190px] whitespace-nowrap">Audience & Reach</th>
+                  <th className="py-3.5 px-4 sm:px-5 font-semibold min-w-[260px] whitespace-nowrap">Recent Verified Media</th>
+                  <th className="py-3.5 px-4 sm:px-5 font-semibold w-[170px] whitespace-nowrap">Pipeline Stage</th>
+                  <th className="py-3.5 px-4 sm:px-5 font-semibold w-[180px] whitespace-nowrap">Assignee & SLA</th>
+                  <th className="py-3.5 px-4 sm:px-5 text-right font-semibold w-[160px] whitespace-nowrap">Human Review Gate</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[var(--color-border-subtle)]">
@@ -245,7 +245,7 @@ export function InfluencerCrmPipeline({
                         className="hover:bg-[var(--color-panel-subtle)]/60 transition-colors group"
                       >
                         {/* Creator Profile */}
-                        <td className="py-3.5 px-4 sm:px-5">
+                        <td className="py-3.5 px-4 sm:px-5 w-[260px]">
                           <div className="flex items-center space-x-3">
                             <div className="relative shrink-0">
                               <img
@@ -266,7 +266,7 @@ export function InfluencerCrmPipeline({
                                 )}
                               </span>
                             </div>
-                            <div className="min-w-0">
+                            <div className="min-w-0 flex-1">
                               <div className="flex items-center gap-1.5">
                                 <span className="font-semibold text-sm text-[var(--color-text-primary)] truncate">
                                   {creator.name}
@@ -277,34 +277,35 @@ export function InfluencerCrmPipeline({
                                   </span>
                                 )}
                               </div>
-                              <div className="flex items-center gap-1.5 text-xs text-[var(--color-text-muted)] font-mono mt-0.5">
-                                <span className="text-[var(--color-text-secondary)] font-medium">{creator.handle}</span>
+                              <div className="flex items-center gap-1.5 text-xs text-[var(--color-text-muted)] font-mono mt-0.5 whitespace-nowrap">
+                                <span className="text-[var(--color-text-secondary)] font-medium truncate">{creator.handle}</span>
                                 <span>•</span>
-                                <span>{creator.location}</span>
+                                <span className="truncate">{creator.location}</span>
                               </div>
                             </div>
                           </div>
                         </td>
 
                         {/* Metrics */}
-                        <td className="py-3.5 px-4 sm:px-5">
+                        <td className="py-3.5 px-4 sm:px-5 w-[190px] whitespace-nowrap">
                           <div className="font-mono font-bold text-sm sm:text-base text-[var(--color-text-primary)] tabular-nums">
                             {formatCompactNumber(creator.followers)}
                           </div>
                           <div className="text-xs text-emerald-700 dark:text-emerald-400 font-mono font-semibold mt-0.5">
                             {creator.engagementRate}% engagement
                           </div>
-                          <span className="inline-block mt-1 px-2 py-0.5 rounded text-xs bg-[var(--color-panel-subtle)] text-[var(--color-text-secondary)] border border-[var(--color-border)] font-medium">
-                            {creator.niche}
+                          <span className="inline-flex items-center gap-1.5 mt-1.5 px-2.5 py-0.5 rounded-md text-xs font-medium bg-[var(--color-panel-subtle)] text-[var(--color-text-secondary)] border border-[var(--color-border)] whitespace-nowrap">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-brand-primary)]/70 shrink-0" />
+                            <span>{creator.niche}</span>
                           </span>
                         </td>
 
                         {/* Recent Verified Content */}
-                        <td className="py-3.5 px-4 sm:px-5 max-w-xs">
-                          <p className="text-xs sm:text-[13px] text-[var(--color-text-primary)] line-clamp-1 font-normal leading-snug">
+                        <td className="py-3.5 px-4 sm:px-5 min-w-[260px] max-w-sm">
+                          <p className="text-xs sm:text-[13px] text-[var(--color-text-primary)] truncate font-normal leading-snug" title={creator.recentPost.caption}>
                             &ldquo;{creator.recentPost.caption}&rdquo;
                           </p>
-                          <div className="flex items-center gap-2 mt-1 text-xs text-[var(--color-text-muted)] font-mono">
+                          <div className="flex items-center gap-2 mt-1 text-xs text-[var(--color-text-muted)] font-mono whitespace-nowrap">
                             <span className="font-medium text-[var(--color-text-secondary)]">{creator.recentPost.mediaType}</span>
                             <span>•</span>
                             <span>{creator.recentPost.likes.toLocaleString()} likes</span>
@@ -313,22 +314,23 @@ export function InfluencerCrmPipeline({
                               href={creator.recentPost.postUrl}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex items-center text-[var(--color-brand-primary)] hover:underline font-semibold"
+                              className="inline-flex items-center gap-0.5 text-[var(--color-brand-primary)] hover:underline font-semibold shrink-0"
                             >
-                              Post <ExternalLink className="h-2.5 w-2.5 ml-0.5" />
+                              <span>Post</span>
+                              <ExternalLink className="h-2.5 w-2.5" />
                             </a>
                           </div>
                         </td>
 
                         {/* Pipeline Stage with Quick Selector */}
-                        <td className="py-3.5 px-4 sm:px-5">
+                        <td className="py-3.5 px-4 sm:px-5 w-[170px] whitespace-nowrap">
                           <select
                             value={creator.pipelineStage}
                             onChange={(e) =>
                               onUpdateCreatorStage(creator.id, e.target.value as PipelineStage)
                             }
                             className={cn(
-                              "text-xs font-semibold rounded-md px-2.5 py-1 border cursor-pointer outline-none transition-colors",
+                              "w-full text-xs font-semibold rounded-md px-2.5 py-1.5 border cursor-pointer outline-none transition-colors whitespace-nowrap",
                               stageConfig.badgeClass
                             )}
                           >
@@ -339,18 +341,18 @@ export function InfluencerCrmPipeline({
                             <option value="SHIPPED">Shipped</option>
                             <option value="LIVE">Live & Tracking</option>
                           </select>
-                          <div className="mt-1.5 flex items-center gap-1.5 text-xs text-[var(--color-text-muted)] font-medium">
-                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 inline-block" />
+                          <div className="mt-1.5 flex items-center gap-1.5 text-xs text-[var(--color-text-muted)] font-medium whitespace-nowrap">
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 inline-block shrink-0" />
                             <span>Official API Verified</span>
                           </div>
                         </td>
 
                         {/* Assignee & SLA */}
-                        <td className="py-3.5 px-4 sm:px-5">
+                        <td className="py-3.5 px-4 sm:px-5 w-[180px] whitespace-nowrap">
                           <select
                             value={creator.assignedTeamMember}
                             onChange={(e) => onUpdateAssignee(creator.id, e.target.value)}
-                            className="w-full text-xs font-medium rounded-md bg-[var(--color-panel-subtle)] border border-[var(--color-border)] py-1 px-2.5 text-[var(--color-text-primary)] outline-none"
+                            className="w-full text-xs font-medium rounded-md bg-[var(--color-panel-subtle)] border border-[var(--color-border)] py-1.5 px-2.5 text-[var(--color-text-primary)] outline-none"
                           >
                             {TEAM_MEMBERS.map((member) => (
                               <option key={member} value={member}>
@@ -358,21 +360,21 @@ export function InfluencerCrmPipeline({
                               </option>
                             ))}
                           </select>
-                          <div className="mt-1.5 flex items-center gap-1.5 text-xs text-[var(--color-text-muted)] font-mono">
-                            <Clock className="h-3 w-3 text-amber-500" />
+                          <div className="mt-1.5 flex items-center gap-1.5 text-xs text-[var(--color-text-muted)] font-mono whitespace-nowrap">
+                            <Clock className="h-3 w-3 text-amber-500 shrink-0" />
                             <span>SLA: {creator.nextReminderDate}</span>
                           </div>
                         </td>
 
                         {/* Actions */}
-                        <td className="py-3.5 px-4 sm:px-5 text-right">
+                        <td className="py-3.5 px-4 sm:px-5 text-right w-[160px] whitespace-nowrap">
                           <button
                             onClick={() => onSelectCreatorForComposer(creator)}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-panel)] hover:border-[var(--color-brand-primary)] hover:text-[var(--color-brand-primary)] text-xs sm:text-sm font-semibold text-[var(--color-text-primary)] transition-all shadow-2xs group-hover:border-slate-300 dark:group-hover:border-slate-700"
+                            className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-panel)] hover:bg-[var(--color-brand-primary)] hover:border-[var(--color-brand-primary)] text-[var(--color-text-primary)] hover:text-white text-xs font-semibold transition-all shadow-2xs group/btn whitespace-nowrap shrink-0 cursor-pointer"
                           >
-                            <Sparkles className="h-3.5 w-3.5 text-[var(--color-brand-primary)]" />
-                            <span>Review Draft</span>
-                            <ArrowRight className="h-3 w-3 ml-0.5" />
+                            <Sparkles className="h-3.5 w-3.5 text-[var(--color-brand-primary)] group-hover/btn:text-white transition-colors shrink-0" />
+                            <span className="whitespace-nowrap font-medium">Review Draft</span>
+                            <ArrowRight className="h-3 w-3 ml-0.5 transition-transform group-hover/btn:translate-x-0.5 shrink-0" />
                           </button>
                         </td>
                       </tr>
